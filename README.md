@@ -7,7 +7,7 @@ Integrantes:
 Sebastián
 Mauricio: Tengo 34 años, Ingeniero electrónico, me gusta en mayor medidda el desarrollo back-end.
 Juan
-Camilo:
+Camilo: tengo 22 años, Mecatronico, me gusta el front y el diseño UX
 
 Referencias:
     https://www.thewhitecandleco.com.ar/
