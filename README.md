@@ -4,7 +4,7 @@ Sitio de ecommerce para un emprendimiento de venta de velas, jabones y adornos d
 Con objetivo en el publico general, buscando presentar los productos de forma accesible y facilitar la interaccion comercial.
 
 Integrantes: 
-Sebastián
+Sebastián: Tengo 27 años, soy médico y me interesa el front-end.
 Mauricio: Tengo 34 años, Ingeniero electrónico, me gusta en mayor medidda el desarrollo back-end.
 Juan
 Camilo: tengo 22 años, Mecatronico, me gusta el front y el diseño UX
