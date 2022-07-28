@@ -20,15 +20,16 @@ div.top-header{
 }
 
 header{
-    background-color: #EAC926;
+    background-color: #808080;
 }
 
 header div.logo{
-    width: 50%;
+    width: 100%;
 }
 
 header div.logo{
     padding: 10px;
+    text-align: center;
 }
 header nav{
     font-size: 12px;
