@@ -23,13 +23,11 @@ header{
     background-color: #808080;
 }
 
-header div.logo{
-    width: 100%;
-}
+
 
 header div.logo{
-    padding: 10px;
-    text-align: center;
+    padding-bottom: 20px;
+
 }
 header nav{
     font-size: 12px;
@@ -63,6 +61,16 @@ header div.top-header p{
     text-align: center;
     margin-top: 10px;
 }
+
+header div.header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+header ul.enlaces {
+    display: flex;
+    justify-content: space-evenly;
+    }
 
 div.burger-menu{
     text-align: center;
