@@ -5,7 +5,7 @@ Con objetivo en el publico general, buscando presentar los productos de forma ac
 
 Integrantes: 
 Sebastián: Tengo 27 años, soy médico y me interesa el front-end.
-Mauricio: Tengo 34 años, Ingeniero electrónico, me gusta en mayor medidda el desarrollo back-end.
+Mauricio: Tengo 34 años, Ingeniero electrónico, me gusta en mayor medida el desarrollo back-end.
 Juan: Tengo 40 años, soy psicomotricista, director de un hogar de anciano y me interesa el front-end.
 Camilo: tengo 22 años, Mecatronico, me gusta el front y el diseño UX
 
@@ -17,3 +17,5 @@ Referencias:
     https://laboutiquedelasvelas.com/
     https://www.thevoorstore.com.ar/
 
+Planificación en Trelo:
+https://trello.com/grupo_7_ceramiqueprojet
