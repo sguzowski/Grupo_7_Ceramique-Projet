@@ -17,5 +17,9 @@ Referencias:
     https://laboutiquedelasvelas.com/
     https://www.thevoorstore.com.ar/
 
+Proyecto en GITHUB.
+
+https://github.com/sguzowski/Grupo_7_Ceramique-Projet.git
+
 Planificación en Trelo:
 https://trello.com/grupo_7_ceramiqueprojet
