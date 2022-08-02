@@ -5,9 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styleRegister.css">
 </head>
 <body>
-    <h1>PRUEBA DE PAGINA REG</h1>
-    
+    <form action="/views/register.html" method="POST">
+        <div>
+            <label>Nombre Completo:</label>
+            <input type="text" name= "nombreUsuario">
+        </div>
+
+        <div>
+            <label>Contraseña:</label>
+            <input type="password" name="passwordUsuario">
+        </div>
+
+        <div>
+            <label>Correo Electronico:</label>
+            <input type="email" name="emailUsuario">
+        </div>
+
+        <div>
+            <label>Edad:</label>
+            <input type="numer" name="edad">
+        </div>
+
+        <div>
+            <label>Telefono:</label>
+            <input type="tel" name="telefono">
+        </div>
+
+        <div>
+            <label for="terminos"> acepto los terminos y condiciones</label>
+                <input type="checkbox" name="terminos">
+        </div>
+        
+        <button type="reset">Cancelar</button>
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>

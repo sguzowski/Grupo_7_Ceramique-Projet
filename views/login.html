@@ -5,8 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
 </head>
 <body>
-    <h1>PRUEBA DE PAGINA LOGIN</h1>
+
+    <form action="/views/login.html" method="POST">
+        <div>
+            <label>Nombre Completo:</label>
+            <input type="text" name= "nombreUsuario">
+        </div>
+        <div>
+            <label>Contraseña:</label>
+            <input type="password" name="passwordUsuario">
+        </div>
+        <div>
+            <label>Correo Electronico:</label>
+            <input type="email" name="emailUsuario">
+        </div>
+        <button type="submit">Enviar</button>
+
 </body>
 </html>
