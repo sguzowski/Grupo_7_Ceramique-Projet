@@ -4,43 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/styleRegister.css">
 </head>
+        <header>
+        <div class="cabecera">CABECERA</div>
+
+        </header>
+
 <body>
+    <h3>Crea tu cuenta</h3>
     <form action="/views/register.html" method="POST">
         <div>
-            <label>Nombre Completo:</label>
-            <input type="text" name= "nombreUsuario">
+            <label class="texto" >Nombre Completo:</label>
+            <input type="text" name= "nya" placeholder="Ej. Juan Perez">
+        </div>
+        <div>
+            <label class="texto" >Nombre Usuario:</label>
+            <input type="text" name= "nombreUsuario" placeholder="Ej. jperez">
         </div>
 
         <div>
-            <label>Contraseña:</label>
+            <label class="texto">Contraseña:</label>
             <input type="password" name="passwordUsuario">
         </div>
-
         <div>
-            <label>Correo Electronico:</label>
-            <input type="email" name="emailUsuario">
+            <label class="texto">Confirmar Contraseña:</label>
+            <input type="password" name="passwordUsuario-config">
         </div>
 
         <div>
-            <label>Edad:</label>
-            <input type="numer" name="edad">
+            <label class="texto" >Correo Electronico:</label>
+            <input type="email" name="emailUsuario" placeholder="Ej. juan.perez@gmail.com">
         </div>
 
         <div>
-            <label>Telefono:</label>
-            <input type="tel" name="telefono">
+            <label class="texto" >Edad:</label>
+            <input type="numer" name="edad" placeholder="Ej. 34">
         </div>
 
         <div>
-            <label for="terminos"> acepto los terminos y condiciones</label>
-                <input type="checkbox" name="terminos">
+            <label class="texto" >Telefono:</label>
+            <input type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)">
         </div>
-        
-        <button type="reset">Cancelar</button>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="boton">CREA TU CUENTA</button>
+        <input type="checkbox" name="terminos" class="cheq"><label for="terminos">Acepto los terminos y condiciones</label>
+        <p>¿Ya tenes una cuenta? <a href="/login" class="iniciar">Iniciá Sesión</a></p>
     </form>
 </body>
 </html>

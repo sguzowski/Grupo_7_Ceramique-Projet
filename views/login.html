@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/styleLogin.css">
 </head>
-<body>
+        <header>
+        <div class="cabecera">CABECERA</div>
 
+        </header>
+
+<body>
+    <h3>Logueate</h3>
     <form action="/views/login.html" method="POST">
         <div>
-            <label>Nombre Completo:</label>
-            <input type="text" name= "nombreUsuario">
+            <label class="texto" >Nombre Usuario:</label>
+            <input type="text" name= "nombreUsuario" placeholder="Ej. Juan Perez">
         </div>
+
         <div>
-            <label>Contraseña:</label>
+            <label class="texto">Contraseña:</label>
             <input type="password" name="passwordUsuario">
         </div>
-        <div>
-            <label>Correo Electronico:</label>
-            <input type="email" name="emailUsuario">
-        </div>
-        <button type="submit">Enviar</button>
-
+        <button type="submit" class="boton">INGRESÁ</button>
+        
+        <p>¿No estas registrado? <a href="/register" class="iniciar">Registrate</a></p>
+    </form>
 </body>
 </html>
