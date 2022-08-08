@@ -1,0 +1,133 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color:#f7ecefc4;
+    width: 100%;
+}
+main{
+    margin-bottom: 10px;
+    display: flex;
+}
+.cabecera{
+    width: 100%;
+    height: 150px;    
+}
+.fotos{
+    width: 50%;
+    height: 50%;
+}
+div .principal{
+   
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+div .secundaria{
+ display: flex; 
+ justify-content:center;  
+ 
+}
+.secundaria img{
+    width: 20%;
+    height: 20%;
+    margin-left: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+.descripcion{
+    width: 50%;
+    height: 50%;
+    
+}
+
+.titulo{
+    margin-bottom: 10px;
+}
+.marca{
+    font-size:small;
+    color:grey;
+    margin-bottom: 20px;
+}
+.price{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.cant label{
+    font-size: medium;
+    margin-bottom: 10px;
+}
+.cant input{
+    width: 40px;
+    height: 25px;
+    margin-bottom: 20px;
+}
+.carrito{
+    width: 25%;
+    height: 30px;
+    border: solid 1px black;
+    display: block;
+    background-color: black;
+    color: antiquewhite;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+.carrito h3{
+    font-size: medium;
+    text-align: center;
+    margin-top: 5px;
+}
+.impuestos{
+    display: flex;
+}
+.impuestos h4{
+    margin-left: 10px;
+    font-size:small;
+    color:grey;
+    margin-bottom: 20px;
+}
+div .stock{
+    margin-left: 0;
+}
+.titulo-info{
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+.info,.lista{
+    color: gray;
+    font-size: 15px;
+}
+.lista{
+    margin-left: 20px;
+}
+
+footer {
+    width: 100%;
+    height: 150px;
+}
+
+ @media (min-width: 361px) {
+    .imagen img{
+        
+        height: 50%;
+    }
+}
+@media (min-width: 769px) {
+    .imagen img{
+        
+        height: 70%;
+    }
+    
+}
+@media (min-width: 1200px) {
+    .imagen img{
+        
+        height: 100%;
+    }
+    
+}
