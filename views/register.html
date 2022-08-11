@@ -1,46 +1,135 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/styleRegister.css">
+    <script src="https://kit.fontawesome.com/81fea61b65.js" crossorigin="anonymous"></script>
+    <!----------------------------------->
+    <link rel="stylesheet" href="css/styleHeader.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <form action="/views/register.html" method="POST">
-        <div>
-            <label>Nombre Completo:</label>
-            <input type="text" name= "nombreUsuario">
+    <header>
+        <div class="divtophead">
+            <div class="divlogo">
+                <img class="logo" src="/design/logo.jpg" alt="logo">
+            </div>
+            <div class="divsearch">
+                <form>
+                    <input class="search" type="text" placeholder="¿Qué estás buscando?">
+                </form>
+            </div>
+            <div class="divcuenta">
+                <a href="#"><img src="/design/cuenta.png" alt="micuenta"></a>
+                <p>Mi Cuenta</p>
+            </div>
+            <div class="divcarro">
+                <a href="#"><img src="/design/compras.png" alt="carrito"></a>
+                <p>Compras</p>
+            </div>
         </div>
+        <div class="divnav">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Contacto</a></li>                
+                </ul>            
+            </nav>
+    </div>
+    </header>
+    <main>
+        <h3>Crea tu cuenta</h3>
+        <form action="/views/register.html" method="POST">
+            <div>
+                <label class="texto">Nombre Completo:</label>
+                <input type="text" name="nya" placeholder="Ej. Juan Perez">
+            </div>
+            <div>
+                <label class="texto">Nombre Usuario:</label>
+                <input type="text" name="nombreUsuario" placeholder="Ej. jperez">
+            </div>
 
-        <div>
-            <label>Contraseña:</label>
-            <input type="password" name="passwordUsuario">
-        </div>
+            <div>
+                <label class="texto">Contraseña:</label>
+                <input type="password" name="passwordUsuario">
+            </div>
+            <div>
+                <label class="texto">Confirmar Contraseña:</label>
+                <input type="password" name="passwordUsuario-config">
+            </div>
 
-        <div>
-            <label>Correo Electronico:</label>
-            <input type="email" name="emailUsuario">
-        </div>
+            <div>
+                <label class="texto">Correo Electronico:</label>
+                <input type="email" name="emailUsuario" placeholder="Ej. juan.perez@gmail.com">
+            </div>
 
-        <div>
-            <label>Edad:</label>
-            <input type="numer" name="edad">
-        </div>
+            <div>
+                <label class="texto">Edad:</label>
+                <input type="numer" name="edad" placeholder="Ej. 34">
+            </div>
 
-        <div>
-            <label>Telefono:</label>
-            <input type="tel" name="telefono">
-        </div>
+            <div>
+                <label class="texto">Telefono:</label>
+                <input type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)">
+            </div>
+            <button type="submit" class="boton">CREA TU CUENTA</button>
+            <input type="checkbox" name="terminos" class="cheq"><label for="terminos">Acepto los terminos y
+                condiciones</label>
+            <p>¿Ya tenes una cuenta? <a href="/login" class="iniciar">Iniciá Sesión</a></p>
+        </form>
+    </main>
 
-        <div>
-            <label for="terminos"> acepto los terminos y condiciones</label>
-                <input type="checkbox" name="terminos">
+    <footer>
+
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="bancoimagenes/logo.jpg" alt="">
+                </div>
+
+            </div>
+            <div class="box__footer">
+                <h2>Sobre Nosotros </h2>
+                <div class="terms">
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima laudantium laborum iste
+                        reprehenderit dolore provident, impedit expedita, eligendi facilis architecto reiciendis!
+                        Incidunt
+                        praesentium, non delectus rerum dolor ratione ipsam voluptatem!</p>
+                </div>
+            </div>
+            <div class="box__footer">
+                <h2>Compañia</h2>
+                <a href="#">Acerca de</a>
+                <a href="#">Trabajos</a>
+                <a href="#">Procesos</a>
+                <a href="#">Servicios</a>
+            </div>
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+                <a href="#"><i class="fa-brands fa-square-facebook"></i>Facebook</a>
+                <a href="#"><i class="fa-brands fa-square-twitter"></i>Twitter</a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+                <a href="#"><i class="fa-brands fa-square-instagram"></i>Instagram</a>
+            </div>
         </div>
-        
-        <button type="reset">Cancelar</button>
-        <button type="submit">Enviar</button>
-    </form>
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2022 <b>Grupo 7</b></p>
+        </div>
+    </footer>
 </body>
+
 </html>
