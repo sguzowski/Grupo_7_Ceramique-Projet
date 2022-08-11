@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+header {
+    font-family: "Quicksand", sans-serif;
+    background-color: rgb(190, 177, 153);
+    box-shadow: 0 0 15px #000;
+    box-sizing:border-box;
+    border: solid 3px rgb(219, 142, 155);
+
+}
+.divtophead{
+    background-image: url(../design/beigeterrazzo.jpg);
+
+    width: 70%;
+    margin: 0 auto;
+    border:solid 1px red;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 9vw;
+    justify-content: space-evenly;
+}
+.divcuenta{
+    background-color: rgba(98, 64, 32, 0.3);
+    border:solid 1px rgba(98,64,32,0.7);
+    display: inline-block;
+    text-align: center;
+    align-self: center;
+    height: 4vw;
+    width: 4vw;
+    margin:0.5vw;
+}
+.divcuenta img{
+    padding: 3px;
+    height: 60%;
+}
+.divcuenta p{
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+.divcarro{
+    background-color: rgba(98, 64, 32, 0.3);
+    border:solid 1px rgba(98,64,32,0.7);
+    display: inline-block;
+    text-align: center;
+    align-self: center;
+    height: 4vw;
+    width: 4vw;
+    margin:1vw;
+}
+.divcarro img{
+    padding: 3px;
+    height:60%;
+}
+.divcarro p{
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+.divlogo{
+    border:solid 1px green;
+    align-self: center;
+    height:fit-content;
+    margin: 1vw;
+}
+.logo{
+    height: 7vw;
+}
+.divsearch{
+    border:solid 1px pink;
+    align-self: center;
+    flex:1;
+    margin: 2vw;
+}
+.search{
+    font-size: 2vw;
+    text-align: center;
+    width: 100%;
+    height:3vw;
+}
+

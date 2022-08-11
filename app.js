@@ -31,3 +31,7 @@ app.get('/productDetail', (req,res)=>{
 app.get('/register', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
 });
+
+app.get("/header", (req,res)=>{
+    res.sendFile(__dirname + "/views/header.html");
+});
