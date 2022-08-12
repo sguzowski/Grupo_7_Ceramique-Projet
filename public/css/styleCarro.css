@@ -2,37 +2,49 @@
     margin:0;
     padding: 0;
 }
+
 main{
     display: flex;
     margin: 10px;
-    border: solid 1px red
-  
+    width: 80%;
+    margin: auto;
+   
 }
 .general{
     height: 70%;
-    border: solid 1px salmon;
+    font-size: large;
+    margin-bottom: 10px;
 
 }
 .barra div i{
-    color: red;
+   
     font-size: 15px;
 }
 .barra{
     height: 50%;
-    border: solid 1px salmon;
     display: flex;
-
+    background-color: #7465659c;
+    border-radius: 5px;
+    
 }
 .barra div{
     width: 20%;
     text-align: center;
-   
+    border: solid 0.5px black;
+    
+}
+.barra h3{
+    font-size: small;
+    color:aliceblue
 }
 .productos {
     display: block;
     width: 70%;
     height: 800px;
-    border: solid 1px black;
+    
+}
+div .nombre-producto{
+    width: 70%;
 }
 .compra{
     display: block;
@@ -43,10 +55,134 @@ main{
 .seleccionado{
     display: flex;
     height: 25%;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: solid 0.2px rgba(145, 134, 134, 0.514);
+   
+
 
 }
 .seleccionado div{
     
     width: 20%;
-    border: solid 1px blue;
+    
+}
+.seleccionado div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 5px;
+   
+    
+}
+.vela-foto{
+    align-items: center;
+    display: flex;
+    
+}
+.vela-foto div{
+    width: 50%;
+}
+.seleccionado .vela-foto{
+    width: 70%;
+}
+.vela-foto h3{
+    
+   text-align: center;
+   padding: 10px;
+}
+.icono{
+    color: red;
+    opacity: 50%;
+    font-size:medium;
+}
+div:hover.icono{
+    color: red;
+    opacity: 100%;
+    transition: all 0.5s;
+}
+.subtotal{
+    display: flex;
+}
+.subtotal-valor{
+    width: 30%;
+}
+
+
+
+
+footer{
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+    background-color:antiquewhite;
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo img{
+    width: 100x;
+    padding-top: 20%;
+}
+
+.box__footer .terms{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #7a7a7a;
+    font-size: 18px;
+}
+
+.box__footer h2{
+    margin-bottom: 30px;
+    color:#343434;
+    font-weight: 700;    
+}
+
+.box__footer a{
+    margin-top: 10px;
+    color:#7a7a7a;
+    font-weight: 600;
+}
+
+.box__footer a:hover{
+    opacity: 0.8;
+}
+
+.box__footer a .fab{
+    font-size: 20px;
+    
+}
+
+.box__copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+
+}
+
+.box__copyright p{
+    margin-top: 20px;
+    color:#7a7a7a
+}
+
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
 }

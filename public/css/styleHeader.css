@@ -90,6 +90,10 @@ header {
     z-index: -1;
     
 }
+.divnav{
+    position:sticky;
+    top:100px;
+}
 .nav_links li{
     line-height: 1em;
     font-size: 1.2vw;
