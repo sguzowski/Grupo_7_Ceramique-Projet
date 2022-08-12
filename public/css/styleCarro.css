@@ -1,0 +1,52 @@
+*{ 
+    margin:0;
+    padding: 0;
+}
+main{
+    display: flex;
+    margin: 10px;
+    border: solid 1px red
+  
+}
+.general{
+    height: 70%;
+    border: solid 1px salmon;
+
+}
+.barra div i{
+    color: red;
+    font-size: 15px;
+}
+.barra{
+    height: 50%;
+    border: solid 1px salmon;
+    display: flex;
+
+}
+.barra div{
+    width: 20%;
+    text-align: center;
+   
+}
+.productos {
+    display: block;
+    width: 70%;
+    height: 800px;
+    border: solid 1px black;
+}
+.compra{
+    display: block;
+    width: 30%;
+    height: 800px;
+}
+
+.seleccionado{
+    display: flex;
+    height: 25%;
+
+}
+.seleccionado div{
+    
+    width: 20%;
+    border: solid 1px blue;
+}
