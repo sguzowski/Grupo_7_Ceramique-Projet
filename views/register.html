@@ -10,13 +10,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/styleRegister.css">
     <script src="https://kit.fontawesome.com/81fea61b65.js" crossorigin="anonymous"></script>
+    <!----------------------------------->
+    <link rel="stylesheet" href="css/styleHeader.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 </head>
-<header>
-    <div class="cabecera">CABECERA</div>
-
-</header>
 
 <body>
+    <header>
+        <div class="divtophead">
+            <div class="divlogo">
+                <img class="logo" src="/design/logo.jpg" alt="logo">
+            </div>
+            <div class="divsearch">
+                <form>
+                    <input class="search" type="text" placeholder="¿Qué estás buscando?">
+                </form>
+            </div>
+            <div class="divcuenta">
+                <a href="#"><img src="/design/cuenta.png" alt="micuenta"></a>
+                <p>Mi Cuenta</p>
+            </div>
+            <div class="divcarro">
+                <a href="#"><img src="/design/compras.png" alt="carrito"></a>
+                <p>Compras</p>
+            </div>
+        </div>
+        <div class="divnav">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Contacto</a></li>                
+                </ul>            
+            </nav>
+    </div>
+    </header>
     <main>
         <h3>Crea tu cuenta</h3>
         <form action="/views/register.html" method="POST">

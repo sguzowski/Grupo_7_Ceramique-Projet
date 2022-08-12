@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+header {
+    font-family: "Quicksand", sans-serif;
+    background-color: rgb(190, 177, 153);
+    box-shadow: 0 0 15px #000;
+    box-sizing:border-box;
+    margin-bottom: 1vw;
+}
+.divtophead{
+    background-image: url(../design/beigeterrazzo.jpg);
+    width: 99.5%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 9vw;
+    justify-content: space-evenly;
+    box-shadow: 0 0 5px black;
+    z-index: 1;
+}
+.divcuenta{
+    background-color: beige;
+    border:solid 2px rgba(98,64,32,0.7);
+    display: inline-block;
+    text-align: center;
+    align-self: center;
+    height: 4vw;
+    width: 4vw;
+    margin:0.5vw;
+}
+.divcuenta img{
+    padding: 3px;
+    height: 60%;
+}
+.divcuenta p{
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+.divcarro{
+    background-color: beige;
+    border:solid 2px rgba(98,64,32,0.7);
+    display: inline-block;
+    text-align: center;
+    align-self: center;
+    height: 4vw;
+    width: 4vw;
+    margin:1vw;
+}
+.divcarro img{
+    padding: 3px;
+    height:60%;
+}
+.divcarro p{
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+.divlogo{
+    align-self: center;
+    height:min-content;
+    margin: 1vw;
+    box-shadow: 0 0 10px rgba(116, 65, 8, 0.733);
+}
+.logo{
+    height: 7vw;
+}
+.divsearch{
+    align-self: center;
+    flex:1;
+    margin: 2vw;
+}
+.search{
+    align-self: center;
+    font-size: 2vw;
+    text-align: center;
+    width: 100%;
+    height:3vw;
+    border-radius: 2vw;
+}
+
+.divnav nav ul{
+    margin: 0 auto;
+    width:99.5%;
+    box-shadow: 0 0 5px black;
+    display: flex;
+    justify-content: flex-end;
+    z-index: -1;
+    
+}
+.nav_links li{
+    line-height: 1em;
+    font-size: 1.2vw;
+    width:7vw;
+    margin: 0.3vw;
+    color: black;
+    font-weight: bold;
+    display:inline-block;
+    text-align: center;
+    padding: 0.3vw;
+    border-radius: 20px;;
+    border: solid 3px rgb(105, 77, 6);
+}
+.nav_links li:hover{
+    background-color: rgb(231, 150, 164);
+    border: solid 3px rgb(231, 150, 164);
+}
