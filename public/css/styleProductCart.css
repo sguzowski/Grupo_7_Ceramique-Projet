@@ -7,6 +7,9 @@ body{
 	justify-content: center;
 	align-items: center;
 }
+main{
+    margin-bottom: 100px;
+}
 
 .CartContainer{
 	width: 70%;

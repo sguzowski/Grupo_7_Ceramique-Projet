@@ -9,7 +9,7 @@ body{
     width: 100%;
 }
 main{
-    margin-bottom: 10px;
+    margin-bottom: 100px;
 }
 .cabecera{
     width: 100%;
@@ -102,6 +102,7 @@ footer{
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
+
 }
 
 .box__footer{
