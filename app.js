@@ -32,11 +32,7 @@ app.get('/register', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
 });
 
-
+//ENVIA INFO ARCHIVO CARRO
 app.get('/carro', (req,res)=>{
     res.sendFile(__dirname + '/views/carro.html');
-});
-
-app.get('/carrito', (req,res)=>{
-    res.sendFile(__dirname + '/views/carrito.html');
 });
