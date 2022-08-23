@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%-include('./partials/head')%>
+<link rel="stylesheet" href="css/styleCarro.css">
+<link rel="stylesheet" href="css/styleHeader.css">
+<title>Carro</title>
+</head>
+
+<body>
+<%-include('./partials/header')%>
+<main>
+<div class="productos">
+<div class="titulo">
+    <div class="general"><h3>CARRO DE COMPRAS</h3></div>
+    <div class="barra">
+        <div class="nombre-producto"><h3>PRODUCTO</h3></div>
+        <div><h3>PRECIO</h3></div>
+        <div><h3>CANTIDAD</h3></div>
+        <div><h3>SUBTOTAL</h3></div>
+        <div class="icono"><i class="fa-solid fa-trash-can"></i>
+        </div>
+    </div>
+    
+</div>
+<div class="seleccionado">
+    <div class="vela-foto">
+    <div>
+    <img src="/bancoimagenes/vela-canela.jpg" alt="">
+    </div>
+    <div>
+    <h3>VELA DE CANELA</h3>
+    </div>  
+    </div>
+    <div class="precio">$5000</div>
+    <div>10</div>
+    <div>$50.000</div>
+    <div class="icono"><i class="fa-solid fa-circle-xmark"></i></div>
+</div>
+<div class="seleccionado">
+    <div class="vela-foto">
+        <div>
+        <img src="/bancoimagenes/vela-lavanda.jpg" alt="">
+        </div>
+        <div>
+        <h3>VELA DE LAVANDA</h3>
+        </div>  
+    </div>
+    <div class="precio">$5000</div>
+    <div>10</div>
+    <div>$50.000</div>
+    <div class="icono"><i class="fa-solid fa-circle-xmark"></i></div>
+</div>
+<div class="seleccionado"> 
+    <div class="vela-foto">
+        <div>
+        <img src="/bancoimagenes/vela-sangre.jpg"alt="">
+        </div>
+        <div>
+        <h3>VELA DE SANGRE</h3>
+        </div>  
+    </div>
+    <div class="precio">$5000</div>
+    <div>10</div>
+    <div>$50.000</div>
+    <div class="icono"><i class="fa-solid fa-circle-xmark"></i></div>
+</div>
+</div>
+
+<div class="compra">
+  <hr> <br>
+<div><h3>RESUMEN DE CUENTA</h3></div>
+
+<div class="subtotal">
+   
+    <div>
+        <h3>Subtotal: </h3>
+    </div>
+    <div>
+        <h5 class="subtotal-valor">$150.000</h5>
+    </div>
+</div>
+
+<div class="envio">
+    
+    <div>
+        <h3>Envío:</h3> 
+    </div>
+    <div> 
+        <h5 class="valor-envio"> $4.000</h5>
+    </div>
+    
+</div>
+
+<hr>
+
+<div class="total-total">
+    
+    <div> 
+        <h3>TOTAL:</h3> 
+    </div>
+    <div class="valor-total">
+        <h5>$154.000</h5>
+    </div>
+</div>
+
+<div>
+    <button class="comprar"> Comprar </button>
+</div>
+</div>
+
+</main>
+<%-include('./partials/footer')%>
+</body>
+</html>

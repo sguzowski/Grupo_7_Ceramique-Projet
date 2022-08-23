@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
+app.set("view engine","ejs"); //CON ESTA LINEA LE DIGO A EXPRESS QUE USO EJS
 
 
 app.listen(3003, ()=>{
@@ -9,30 +10,30 @@ app.listen(3003, ()=>{
 
 //ENVIA INFO ARCHIVO INDEX
 app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/index.html');
-});
-
-//ENVIA INFO ARCHIVO PRODUCTCART
-app.get('/productCart', (req,res)=>{
-    res.sendFile(__dirname + '/views/productCart.html');
+    //res.sendFile(__dirname + '/views/index.ejs');
+    res.render('index')
 });
 
 //ENVIA INFO ARCHIVO LOGIN
 app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
+    //res.sendFile(__dirname + '/views/login.ejs');
+    res.render('login')
 });
 
 //ENVIA INFO ARCHIVO PRODUCTDETAIL
-app.get('/productDetail', (req,res)=>{
-    res.sendFile(__dirname + '/views/productDetail.html');
+app.get('/product-detail', (req,res)=>{
+    //res.sendFile(__dirname + '/views/product-detail.ejs');
+    res.render('product-detail')
 });
 
 //ENVIA INFO ARCHIVO REGISTER
 app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register.html');
+    //res.sendFile(__dirname + '/views/register.ejs');
+    res.render('/register')
 });
 
 //ENVIA INFO ARCHIVO CARRO
 app.get('/carro', (req,res)=>{
-    res.sendFile(__dirname + '/views/carro.html');
+    //res.sendFile(__dirname + '/views/carro.ejs');
+    res.render('carro');
 });

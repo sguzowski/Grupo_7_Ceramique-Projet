@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%-include('./partials/head')%>
+        <link rel="stylesheet" href="css/styleProductDetail.css">
+        <link rel="stylesheet" href="css/styleHeader.css">
+        <title>Detalle de producto</title>
+    </head>
+<body>
+<%-include('./partials/header')%>
+<main>
+
+                <div class="fotos">
+                        <div><img src="bancoimagenes/vela-canela.jpg" alt="Vela" class="principal"></div>
+                        <div class="secundaria">
+                            <img src="bancoimagenes/vela-canela.jpg" alt="Vela">
+                            <img src="bancoimagenes/canela2.jpg" alt="Vela">
+                            <img src="bancoimagenes/canela3.jpg" alt="Vela">
+                        </div>
+                </div>
+                <div class="descripcion">
+                    <h3 class="titulo">Velón artesanal aroma de Palosanto, limpieza y equilibrio</h3>
+                    <h4 class="marca">Marca: Las Velas de Mariano</h4>
+                    <p class="price">$1750</p>
+                    <div class="cant">
+                        <label>Cantidad:</label>
+                        <input type="text" name= "cantidad">
+                    </div>
+                    <div class="carrito"><h3>AÑADIR AL CARRITO</h3></div>
+                    <div class="impuestos">
+                    <h4 class="stock">En stock. Envío inmediato.</h4>
+                    <h4>Impuestos incluidos</h4>
+                    </div>
+                
+                    <h4 class="titulo-info">Descripción del producto</h4>  
+                    <p class="info">Velón de Palosanto fabricado de forma artesanal con 
+                        las mejores ceras. Este velón ayuda a reforzar peticiones de limpieza o 
+                        sanación, y a alcanzar estados de equilibrio con su agradable aroma. 
+                        Medidas: 5,5cm de diámetro x 14cm de alto.</p>
+                    <ul class="lista">
+                        <li>Retirar las etiquetas antes de encender la vela.</li>
+                        <li>La primera vez no encender menos de 30 minutos.</li>
+                        <li>No exponer las velas a altas temperaturas o al sol.</li>
+                        <li>Mantener fuera del alcance de los niños y mascotas.</li>
+                        <li>Encender lejos de objetos que puedan incendiarse y jamás ausentarse dejándola encendida.</li>
+                        <li>Mantener la vela libre de restos de mecha o fósforo</li>
+                    </ul>
+                </div>
+                
+        </main> 
+<%-include('./partials/footer')%>  
+    </body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%-include('./partials/head')%>
+        <link rel="stylesheet" href="css/styleRegister.css">
+        <link rel="stylesheet" href="css/styleHeader.css">
+        <title>Register</title>
+        </head>
+
+<body>
+<%-include('./partials/header')%>
+<main>
+        <h3>Crea tu cuenta</h3>
+        <form action="/views/register.html" method="POST">
+            <div>
+                <label class="texto">Nombre Completo:</label>
+                <input type="text" name="nya" placeholder="Ej. Juan Perez">
+            </div>
+            <div>
+                <label class="texto">Nombre Usuario:</label>
+                <input type="text" name="nombreUsuario" placeholder="Ej. jperez">
+            </div>
+
+            <div>
+                <label class="texto">Contraseña:</label>
+                <input type="password" name="passwordUsuario">
+            </div>
+            <div>
+                <label class="texto">Confirmar Contraseña:</label>
+                <input type="password" name="passwordUsuario-config">
+            </div>
+
+            <div>
+                <label class="texto">Correo Electronico:</label>
+                <input type="email" name="emailUsuario" placeholder="Ej. juan.perez@gmail.com">
+            </div>
+
+            <div>
+                <label class="texto">Edad:</label>
+                <input type="numer" name="edad" placeholder="Ej. 34">
+            </div>
+
+            <div>
+                <label class="texto">Telefono:</label>
+                <input type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)">
+            </div>
+            <button type="submit" class="boton">CREA TU CUENTA</button>
+            <input type="checkbox" name="terminos" class="cheq"><label for="terminos">Acepto los terminos y
+                condiciones</label>
+            <p>¿Ya tenes una cuenta? <a href="/login" class="iniciar">Iniciá Sesión</a></p>
+        </form>
+    </main>
+<%-include('./partials/footer')%>
+</body>
+
+</html>
