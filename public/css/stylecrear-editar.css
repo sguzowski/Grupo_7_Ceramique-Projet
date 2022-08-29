@@ -16,10 +16,11 @@ main{
     height: 150px;    
 }
 body h3{
+    text-align: center;
     font-size: 20px;
     font-weight: bold;
-    margin-left: 100px;
-    margin-bottom: 20px;
+    
+    margin-bottom: 3em;
 
 }
 div input{
@@ -29,10 +30,26 @@ div input{
     flex-direction: row;
     margin:auto;
     text-align: center;
-    width: 50%;
+    width: 30%;
     height: 30px;
     margin-bottom: 20px;
     
+}
+.input-imagen{
+    display:none;
+}
+.label-imagen{
+    display:block;
+    align-self:baseline;
+    text-align:center;
+    border: solid 1px grey;
+    background-color: white;
+    border-radius: 20px;
+    height: 1.5em;
+    width: 30%;
+    margin:auto;
+    cursor:pointer;
+
 }
 .texto{
     display: block;
@@ -51,8 +68,8 @@ div input{
     background-color:coral;
     color: antiquewhite;
     font-weight:bold;
-    width: 50%;
-    height: 30px;
+    width: 20%;
+    height: 3em;
     margin-bottom: 20px;
     text-align: center;
 }

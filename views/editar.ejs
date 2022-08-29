@@ -4,13 +4,13 @@
         <%-include('./partials/head')%>
         <link rel="stylesheet" href="../css/stylecrear-editar.css">
         <link rel="stylesheet" href="../css/styleHeader.css">
-        <title>Crear Producto</title>
+        <title>Editar Producto</title>
         </head>
 
 <body>
 <%-include('./partials/header')%>
 <main>
-        <h3>Editar un nuevo producto</h3>
+        <h3>Editar un producto existente</h3>
         <form action="/views/editar.ejs" method="POST">
             <div>
                 <label class="texto">Nombre del producto:</label>
@@ -23,7 +23,10 @@
 
             <div>
                 <label class="texto">Imagen:</label>
-                <input type="file" name="imagen">
+                <label class="label-imagen">
+                    Seleccionar Imagen
+                    <input type="file" name="imagen" class="input-imagen">
+                </label>
             </div>
             <div class ="categoria">
                 <label class="texto">Categoría del producto:</label>
