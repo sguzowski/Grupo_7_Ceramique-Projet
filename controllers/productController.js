@@ -12,6 +12,15 @@ let controller = {
     carro: function(req,res){
         res.render("carro");
          },
+    crear: function(req,res){
+        res.render("crear");
+         },
+    editar: function(req,res){
+        res.render("editar");
+        },
+    lista: function(req,res){
+        res.render("lista");
+        },
 }
 
 module.exports=controller;
