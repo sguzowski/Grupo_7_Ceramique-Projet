@@ -1,0 +1,288 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Menu de cabecera*/
+/*
+  .wrapper {
+    width: 80%;
+    margin: auto;
+    overflow:hidden;
+  }
+  header {
+    background: rgba(102, 98, 98, 0.425);
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+  
+  nav {
+    float: left; 
+  }
+  nav ul {
+    list-style: none;
+    overflow: hidden; 
+  }
+  nav ul li {
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+  nav ul li a {
+    display: block; 
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  nav ul li:hover {
+    background: rgba(241, 204, 212, 0.769);
+  }
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color:#f7ecefc4;
+    width: 100%;
+   
+}
+main{
+    margin-bottom: 10px;
+    
+}
+*/
+/*-------------------------------*/
+main{
+    margin-bottom: 100px;
+}
+
+h3{
+    font-size: 24px;
+}
+article{
+    position: relative;
+}
+
+article div.main-article{
+    width: 100%;
+}
+
+.price{
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+
+.products{
+    box-shadow: 0px 0px 10px gray;
+    margin: 7px;
+}
+
+
+
+.imagen img{
+    width: 100%;
+    height: 350px;
+    margin:auto;
+    display: block;
+    
+    
+}
+.title-products{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: grey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+.destacados{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+.products article img{
+    width: 250px;
+    height: 250px;
+}
+.products article{
+  
+    background-color:rgba(241, 204, 212, 0.769);
+    
+
+}
+
+.b-anadir,.b-ver{
+    visibility: hidden;
+    width: 75px;
+    height: 35px;
+    background-color:coral;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    left: 45px;
+    transition: all 0.5s;
+}
+.main-article:hover button{
+    visibility: visible;
+}
+
+.discount{
+    padding: 5px;
+    font-size: small;
+    color: grey;
+    text-align: center;
+}
+
+.description{
+    font-family: "Lucida Handwriting";
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(15, 8, 8);
+}
+.oferta{
+    width: 50px;
+    height: 50px;
+    border: solid 1px salmon;
+    background-color: red;
+    color:ghostwhite;
+    font-weight: bold;
+    border-radius: 100%;
+    text-align: center;
+    padding-top: 3px;
+    position: absolute;
+    z-index: 100;
+    top: 5px;
+    left: 195px;
+}
+.nuevo{
+    width: 50px;
+    height: 50px;
+    
+    background-color: green;
+    color:ghostwhite;
+    font-weight: bold;
+    border-radius: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+    top: 5px;
+    left: 195px;
+}
+.price-oferta{
+    font-size: 25px;
+    font-weight: bold;
+    display: inline;
+    padding-left: 30px;
+}
+.price-viejo{
+    font-size: 15px;
+    text-decoration-line: line-through;
+    display: inline;
+    padding-left: 20px;
+}
+
+
+footer{
+    width: 100%;
+    height: 150px;
+}
+ @media (min-width: 361px) {
+    .imagen img{
+        
+        height: 50%;
+    }
+}
+@media (min-width: 769px) {
+    .imagen img{
+        
+        height: 70%;
+    }
+    
+}
+@media (min-width: 1200px) {
+    .imagen img{
+        
+        height: 100%;
+    }
+    
+}
+/*-----Footer ----*/
+
+footer{
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+    background-color:antiquewhite;
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo img{
+    width: 100x;
+    padding-top: 20%;
+}
+
+.box__footer .terms{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #7a7a7a;
+    font-size: 18px;
+}
+
+.box__footer h2{
+    margin-bottom: 30px;
+    color:#343434;
+    font-weight: 700;    
+}
+
+.box__footer a{
+    margin-top: 10px;
+    color:#7a7a7a;
+    font-weight: 600;
+}
+
+.box__footer a:hover{
+    opacity: 0.8;
+}
+
+.box__footer a .fab{
+    font-size: 20px;
+    
+}
+
+.box__copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+
+}
+
+.box__copyright p{
+    margin-top: 20px;
+    color:#7a7a7a
+}
+
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
