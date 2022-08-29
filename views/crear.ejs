@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
+    <head>
+        <%-include('./partials/head')%>
+        <link rel="stylesheet" href="../css/stylecrear-editar.css">
+        <link rel="stylesheet" href="../css/styleHeader.css">
+        <title>Crear Producto</title>
+        </head>
+
 <body>
-   <h1>HOLA MUNDO!!!!!!</h1>
+<%-include('./partials/header')%>
+<main>
+        <h3>Crear un nuevo producto</h3>
+        <form action="/views/crear.ejs" method="POST">
+            <div>
+                <label class="texto">Nombre del producto:</label>
+                <input type="text" name="nombreProducto" placeholder="Ej. Velon Rojo">
+            </div>
+            <div>
+                <label class="texto">Descripción del producto:</label>
+                <input type="text" name="descripcionProducto" placeholder="Describa el producto aquí">
+            </div>
+
+            <div>
+                <label class="texto">Imagen:</label>
+                <input type="file" name="imagen">
+            </div>
+            <div class ="categoria">
+                <label class="texto">Categoría del producto:</label>
+                <input type="radio" id= "velas" name="categoria">
+                <label class="texto">Velas</label>
+                <input type="radio" id= "velones" name="categoria">
+                <label class="texto">Velones</label>
+                <input type="radio" id= "accesorios" name="categoria">
+                <label class="texto">Accesorios</label>
+                <input type="radio" id= "otra" name="categoria">
+                <label class="texto">Otra</label>
+            </div>
+
+            <div>
+                <label class="texto">Marca del producto:</label>
+                <input type="text" name="marca" placeholder="Ej. Cartocor">
+            </div>
+
+            <div>
+                <label class="texto">Modelo del producto:</label>
+                <input type="text" name="modelo" placeholder="Ej. Velon Rojo 2.0">
+            </div>
+
+            <div>
+                <label class="texto">Precio del producto:</label>
+                <input type="number" name="precio" placeholder="Ej. 2000 (sin signo $)">
+            </div>
+            <button type="submit" class="boton">CREA TU PRODUCTO</button>
+        
+            <p>¿Desea editar un producto? <a href="/products/editar" class="iniciar">Ir a editar producto</a></p>
+        </form>
+    </main>
+<%-include('./partials/footer')%>
 </body>
+
 </html>
