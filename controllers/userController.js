@@ -13,7 +13,14 @@ let controller = {
          },
     register: function(req,res){
         res.render("register");
+        },
+    contactos: function(req,res){
+        res.render("contacto");
+        },
+    nosotros: function(req,res){
+         res.render("nosotros");
         }
+    
 }
 
 module.exports=controller;

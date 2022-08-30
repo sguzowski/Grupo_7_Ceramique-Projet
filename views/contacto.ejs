@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%-include('./partials/head')%>
+<link rel="stylesheet" href="css/styleContacto.css">
+<link rel="stylesheet" href="css/styleHeader.css">
+<title>Index</title>
+</head>
+<body>
+<%-include('./partials/header')%>
+<h1>CONTACTO</h1>
+<main> 
+    <div class="formulario">
+    
+    <h3>Envianos un mensaje</h3>
+        <form action="#" method="POST">
+            <div>
+                <label class="texto">Nombre:</label>
+                <input type="text" name="nombre" placeholder="Ej. Juan Perez">
+            </div>
+            <div>
+                <label class="texto">Apellido:</label>
+                <input type="text" name="apellido" placeholder="Ej. Juan Perez">
+            </div>
+            <div>
+                <label class="texto">E-mail:</label>
+                <input type="email" name="email" placeholder="Ej. juanp@gmail.com">
+            </div>
+            <div>
+                <label class="texto">Mensaje:</label>
+                <input type="text" name="mensaje" placeholder="Ej. Hola tengo una consulta con..." class="mensaje">
+            </div>
+
+            <button type="submit" class="boton">ENVIAR</button>
+
+        </form>
+    </div>
+    <div class="datos">
+        <h3>Donde estamos:</h3>
+        <h4>Dirección: La jaula de las locas 666, Rio Negro</h4>
+        <h4>+54 9 264 4666666</h4>
+        <h4>ceramiqueProject@laslocas.com.ar</h4>
+    </div>
+
+</main> 
+<%-include('./partials/footer')%>
+    </body>
+</html>
