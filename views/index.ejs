@@ -2,7 +2,7 @@
 <html>
 <head>
 <%-include('./partials/head')%>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/style1.css">
 <link rel="stylesheet" href="css/styleHeader.css">
 <title>Index</title>
 </head>
@@ -13,188 +13,81 @@
                 <img src="bancoimagenes/candle3.jpg" alt="Banner">
             </div>
                 <h3 class="title-products">PRODUCTOS</h3>
+                
             <section class="destacados">
+                <% for(let i=0;i<productos.length;i++){%>
                 <div class="products">
                     <article>
-                        <img src="bancoimagenes/vela-canela.jpg" alt="Vela" class="product_img">
-                        <p class="oferta">30%<br>OFF</p>
+                    <a href="/products/product-detail/<%= productos[i].id %>" class="link-productos">
+                        <img src="/bancoimagenes/<%=productos[i].image %>" alt="Vela" class="product_img">
+
+                        <%if(productos[i].discount>0){%>
+                        <p class="oferta"><%=productos[i].discount %><br>OFF</p>
+                        <% } %>
                         <div class="main-article">
-                            <h4 class="description">VELÓN CANELA</h4>
-                            <p class="price-viejo">$2500</p>
-                            <p class="price-oferta">$1750</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
+
+                            <h4 class="description"><%= productos[i].name %></h4>
+
+                            <%if(productos[i].discount>0){%>
+                                <p class="price-viejo"><%= productos[i].price %></p>
+                                <p class="price-actual"><%= productos[i].price*(1-(productos[i].discount/100)) %></p>
+                                <% }else{%>
+                                <p class="price-actual2"><%= productos[i].price%></p>
+                            <% } %>
+                            
+                            
+
+                            <%if(productos[i].stock!=0){%>
+                            <p class="discount">En stock - Entrega inmediata</p>
+                            <%}else{%>
+                            <p class="discount">Sin stock disponible</p> 
+                            <% } %>
+
+                            <div class="botones">
+                            <a href="/carro" class="b-ver" name="anadir">Añadir</a>
+                            <a href="/products/product-detail/<%=productos[i].id %>" class="b-ver" name="detalles">Detalles</a>
+                            </div>
                         </div>
+                        </a>
                     </article>
                 </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-sangre.jpg" alt="Vela" class="product_img">
-                        <p class="nuevo"><br>NEW</p>
-                        <div class="main-article">
-                            <h4 class="description">VELÓN DE SANGRE</h4>
-                            <p class="price">$2.500</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-miel.jpg" alt="Vela" class="product_img">
-                        <p class="oferta">15%<br>OFF</p>
-                        <div class="main-article">
-                            <h4 class="description">VELÓN MIEL</h4>
-                            <p class="price-viejo">$2300</p>
-                            <p class="price-oferta">$2000</p>
-                            <p class="discount">Sin stock</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
+                <% } %>
+
             </section>
-                <h3 class="title-products">PRODUCTOS DESTACADOS</h3>
+
+                <h3 class="title-products">PRODUCTOS EN OFERTA</h3>
             <section class="destacados">
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-canela.jpg" alt="Vela" class="product_img">
-                        <p class="oferta">30%<br>OFF</p>
-                        <div class="main-article">
-                            <h4 class="description">VELÓN CANELA</h4>
-                            <p class="price-viejo">$2500</p>
-                            <p class="price-oferta">$1750</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-sangre.jpg" alt="Vela" class="product_img">
-                        <p class="nuevo"><br>NEW</p>
-                        <div class="main-article">
-                            <h4 class="description">VELÓN DE SANGRE</h4>
-                            <p class="price">$2.500</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-miel.jpg" alt="Vela" class="product_img">
-                        <p class="oferta">15%<br>OFF</p>
-                        <div class="main-article">
-                            <h4 class="description">VELÓN MIEL</h4>
-                            <p class="price-viejo">$2300</p>
-                            <p class="price-oferta">$2000</p>
-                            <p class="discount">Sin stock</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="products">
-                    <article>
-                        <img src="bancoimagenes/vela-lavanda.jpg" alt="Vela" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">VELÓN LAVANDA</h4>
-                            <p class="price">$2.200</p>
-                            <p class="discount">En stock - Entrega imediata</p>
-                            <button class="b-anadir" name="anadir">Añadir</button>
-                            <button class="b-ver" name="detalles">Detalles</button>
-                        </div>
-                    </article>
-                </div>
+
+                <% for(let i=0;i<productos.length;i++){%>
+                <%if(productos[i].discount>0){%>
+                    <div class="products">
+                        <article>
+                            <a href="/products/product-detail/<%= productos[i].id %>" class="link-productos">
+                            <img src="/bancoimagenes/<%=productos[i].image %>" alt="Vela" class="product_img">
+    
+                            <p class="oferta"><%=productos[i].discount %><br>OFF</p>
+                            <div class="main-article">
+                            <h4 class="description"><%= productos[i].name %></h4>
+                            <p class="price-viejo"><%= productos[i].price %></p>
+                            <p class="price-actual"><%= productos[i].price*(1-(productos[i].discount/100)) %></p>
+                    
+                                <%if(productos[i].stock!=0){%>
+                                <p class="discount">En stock - Entrega inmediata</p>
+                                <%}else{%>
+                                <p class="discount">Sin stock disponible</p> 
+                                <% } %>
+    
+                                <div class="botones">
+                                <a href="/carro" class="b-ver" name="anadir">Añadir</a>
+                                <a href="/product-detail/<%=productos[i].id %>" class="b-ver" name="detalles">Detalles</a>
+                                </div>
+                            </div>
+                            </a>
+                        </article>
+                    </div>
+                    <% } %>
+                    <% } %>
+
             </section>
         </main> 
 <%-include('./partials/footer')%>

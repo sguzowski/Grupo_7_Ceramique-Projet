@@ -105,6 +105,25 @@ div .stock{
 .lista{
     margin-left: 20px;
 }
+.botones{
+    display: flex;
+}
+
+.boton{
+    font-size: medium;
+    border: solid 1px grey;
+    border-radius: 20px;
+    display: block;
+    justify-content: left;
+    margin-left: 10px;
+    background-color:coral;
+    color: antiquewhite;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
 
 footer {
     width: 100%;
