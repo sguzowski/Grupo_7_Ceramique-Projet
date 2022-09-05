@@ -1,114 +1,134 @@
 [
-    {
-        "id": 1,
-        "name": "VELÓN CANELA",
-        "price": 1750,
-        "discount": 0,
-        "category": "velones",
-        "description": "Vela natural hecha de manera artesanal con cera vegetal. Sin derivados de petróleo ni productos químicos. Son velas energéticas que se usan para purificar y limpiar tu hogar o negocio de energías no deseadas.",
-        "image": "vela-canela.jpg",
-        "stock": 5,
-        "marca":"cartocor"
-    },
-    {
-        "id": 2,
-        "name": "VELÓN DE SANGRE",
-        "price": 2500,
-        "discount": 0,
-        "category": "velones",
-        "description": "Velones arómaticos de gran calidad con propósitos. Purificación,fortuna y poder",
-        "image": "vela-sangre.jpg",
-        "stock": 0,
-        "marca":"brujas"
-    },
-    {
-        "id": 3,
-        "name": "VELÓN MIEL",
-        "price": 2000,
-        "discount": 0,
-        "category": "velones",
-        "description": "No producen agentes contaminantes, y al encenderlas desprenden un ligero y agradable aroma a miel, siendo apta para personas alérgicas o asmáticas, ya que la cera contiene propiedades antibacterianas que contribuyen a mantener la casa limpia y desinfectada.",
-        "image": "vela-miel.jpg",
-        "stock": 10,
-        "marca":"adidas"
-    },
-    {
-        "id": 4,
-        "name": "VELÓN LAVANDA",
-        "price": 2200,
-        "discount": 0,
-        "category": "velones",
-        "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-        "image": "vela-sangre.jpg",
-        "stock": 15,
-        "marca":"locas"
-    },
-    {
-        "id": 5,
-        "name": "VELÓN LAVANDA",
-        "price": 2200,
-        "discount": 0,
-        "category": "velones",
-        "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-        "image": "vela-sangre.jpg",
-        "stock": 0,
-        "marca":"locas"
-    },
-    {
-        "id": 6,
-        "name": "VELÓN LAVANDA",
-        "price": 2200,
-        "discount": 0,
-        "category": "velones",
-        "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-        "image": "vela-sangre.jpg",
-        "stock": 4,
-        "marca":"locas"
-    },
-    {
-        "id": 7,
-        "name": "VELÓN LAVANDA",
-        "price": 2200,
-        "discount": 10,
-        "category": "velones",
-        "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-        "image": "vela-sangre.jpg",
-        "stock": 0,
-        "marca":"locas"
-    },
-    {
-        "id": 8,
-        "name": "VELÓN LAVANDA",
-        "price": 2200,
-        "discount": 20,
-        "category": "velones",
-        "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-        "image": "vela-sangre.jpg",
-        "stock": 0,
-        "marca":"locas"
-    },
-    {
-        "id": 30,
-        "name": "VELÓN LAVANDA",
-        "price": 2200,
-        "discount": 9,
-        "category": "velones",
-        "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-        "image": "vela-sangre.jpg",
-        "stock": 10,
-        "marca":"locas"
-    },
-    {
-        "id": 40,
-        "name": "VELÓN LAVANDA",
-        "price": 2200,
-        "discount":10,
-        "category": "velones",
-        "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-        "image": "vela-sangre.jpg",
-        "stock": 5,
-        "marca":"locas"
-    }
-  
-    
+ {
+  "id": 1,
+  "name": "VELÓN CANELA",
+  "price": 1750,
+  "discount": 0,
+  "category": "velones",
+  "description": "Vela natural hecha de manera artesanal con cera vegetal. Sin derivados de petróleo ni productos químicos. Son velas energéticas que se usan para purificar y limpiar tu hogar o negocio de energías no deseadas.",
+  "image": "vela-canela.jpg",
+  "stock": 5,
+  "marca": "cartocor"
+ },
+ {
+  "id": 2,
+  "name": "VELÓN DE SANGRE",
+  "price": 2500,
+  "discount": 0,
+  "category": "velones",
+  "description": "Velones arómaticos de gran calidad con propósitos. Purificación,fortuna y poder",
+  "image": "vela-sangre.jpg",
+  "stock": 0,
+  "marca": "brujas"
+ },
+ {
+  "id": 3,
+  "name": "VELÓN MIEL",
+  "price": 2000,
+  "discount": 0,
+  "category": "velones",
+  "description": "No producen agentes contaminantes, y al encenderlas desprenden un ligero y agradable aroma a miel, siendo apta para personas alérgicas o asmáticas, ya que la cera contiene propiedades antibacterianas que contribuyen a mantener la casa limpia y desinfectada.",
+  "image": "vela-miel.jpg",
+  "stock": 10,
+  "marca": "adidas"
+ },
+ {
+  "id": 4,
+  "name": "VELÓN LAVANDA",
+  "price": 2200,
+  "discount": 0,
+  "category": "velones",
+  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
+  "image": "vela-sangre.jpg",
+  "stock": 15,
+  "marca": "locas"
+ },
+ {
+  "id": 5,
+  "name": "VELÓN LAVANDA",
+  "price": 2200,
+  "discount": 0,
+  "category": "velones",
+  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
+  "image": "vela-sangre.jpg",
+  "stock": 0,
+  "marca": "locas"
+ },
+ {
+  "id": 6,
+  "name": "VELÓN LAVANDA",
+  "price": 2200,
+  "discount": 0,
+  "category": "velones",
+  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
+  "image": "vela-sangre.jpg",
+  "stock": 4,
+  "marca": "locas"
+ },
+ {
+  "id": 7,
+  "name": "VELÓN LAVANDA",
+  "price": 2200,
+  "discount": 10,
+  "category": "velones",
+  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
+  "image": "vela-sangre.jpg",
+  "stock": 0,
+  "marca": "locas"
+ },
+ {
+  "id": 8,
+  "name": "VELÓN LAVANDA",
+  "price": 2200,
+  "discount": 20,
+  "category": "velones",
+  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
+  "image": "vela-sangre.jpg",
+  "stock": 0,
+  "marca": "locas"
+ },
+ {
+  "id": 30,
+  "name": "VELÓN LAVANDA",
+  "price": 2200,
+  "discount": 9,
+  "category": "velones",
+  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
+  "image": "vela-sangre.jpg",
+  "stock": 10,
+  "marca": "locas"
+ },
+ {
+  "id": 40,
+  "name": "VELÓN LAVANDA",
+  "price": 2200,
+  "discount": 10,
+  "category": "velones",
+  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
+  "image": "vela-sangre.jpg",
+  "stock": 5,
+  "marca": "locas"
+ },
+ {
+  "id": 1662344464055,
+  "name": "VELA RASCHI",
+  "price": "5000",
+  "discount": "10",
+  "category": "on",
+  "description": "LA VELA DE RIVER",
+  "image": "user-vacio.jpg",
+  "stock": "5",
+  "marca": "CARTOCOR2"
+ },
+ {
+  "id": 1662344730875,
+  "name": "CHUPETIN DE TORTA",
+  "price": "50000",
+  "discount": "10",
+  "category": "on",
+  "description": "LA MEJOR DE TODAS ",
+  "image": "user-vacio.jpg",
+  "stock": "5",
+  "marca": "JUAN"
+ }
 ]

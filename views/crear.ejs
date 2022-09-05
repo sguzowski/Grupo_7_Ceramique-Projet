@@ -11,53 +11,52 @@
 <%-include('./partials/header')%>
 <main>
         <h3>Crear un nuevo producto</h3>
-        <form action="/views/crear.ejs" method="POST">
+        <form action="/products/crear" method="POST" enctype="multipart/form-data">
             <div>
-                <label class="texto">Nombre del producto:</label>
-                <input type="text" name="nombreProducto" placeholder="Ej. Velon Rojo">
+                <label for="name"class="texto">Nombre del producto:</label>
+                <input type="text" id="name" name="name" placeholder="Ej. Velon Rojo">
             </div>
             <div>
-                <label class="texto">Descripción del producto:</label>
-                <input type="text" name="descripcionProducto" placeholder="Describa el producto aquí">
+                <label class="texto" for="description">Descripción del producto:</label>
+                <input type="text" id="description" name="description" placeholder="Describa el producto aquí">
             </div>
 
             <div>
                 <label class="texto">Imagen:</label>
-                <label class="label-imagen">
-                    Seleccionar Imagen
-                    <input type="file" name="imagen" class="input-imagen">
+                <label class="label-imagen" for="image"> Seleccionar Imagen
+                    <input type="file" id="image" name="image" class="input-imagen">
                 </label><br>
             </div>
             <div class ="categoria">
-                <label class="texto">Categoría del producto:</label>
-                <input type="radio" id= "velas" name="categoria">
-                <label class="texto">Velas</label>
-                <input type="radio" id= "velones" name="categoria">
-                <label class="texto">Velones</label>
-                <input type="radio" id= "accesorios" name="categoria">
-                <label class="texto">Accesorios</label>
-                <input type="radio" id= "otra" name="categoria">
-                <label class="texto">Otra</label>
+                <label class="texto" for="category" >Categoría del producto:</label>
+                <input type="radio" id= "velas" name="category" id="category">
+                <label class="texto" for="velas">Velas</label>
+                <input type="radio" id= "velones" name="category">
+                <label class="texto" for="velones">Velones</label>
+                <input type="radio" id= "accesorios" name="category">
+                <label class="texto" for="accesorios">Accesorios</label>
+                <input type="radio" id= "otra" name="category">
+                <label class="texto" for="otra">Otra</label>
             </div><br>
 
             <div>
-                <label class="texto">Marca del producto:</label>
-                <input type="text" name="marca" placeholder="Ej. Cartocor">
+                <label class="texto" for="marca">Marca del producto:</label>
+                <input type="text" name="marca" id= "marca" placeholder="Ej. Cartocor">
             </div>
 
             <div>
-                <label class="texto">Stock de producto:</label>
-                <input type="number" name="stock" placeholder="10">
+                <label class="texto" for="stock">Stock de producto:</label>
+                <input type="number" name="stock" placeholder="10" id="stock">
             </div>
 
             <div>
-                <label class="texto">Precio del producto:</label>
-                <input type="number" name="precio" placeholder="Ej. 2000 (sin signo $)">
+                <label class="texto" for="price">Precio del producto:</label>
+                <input type="number" name="price" placeholder="Ej. 2000 (sin signo $)" id="price">
             </div>
             
             <div>
-                <label class="texto">Descuento:</label>
-                <input type="number" name="precio" placeholder="Ej. 20 ( valor 1 al 100)">
+                <label class="texto" for="discount">Descuento:</label>
+                <input type="number" name="discount" placeholder="Ej. 20 ( valor 1 al 100)" id="discount">
             </div>
             <button type="submit" class="boton">CREA TU PRODUCTO</button>
         

@@ -10,11 +10,12 @@ let controller = {
     index: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         res.render("index", {productos:productos});
-
         //const productsVisited = products.filter((p) => p.category == "visited");
         //const productsInSale = products.filter((p) => p.category == "in-sale");
-    
         },
+    buscar: function(req,res){
+        res.render("");
+         },
 
     login: function(req,res){
         res.render("login");

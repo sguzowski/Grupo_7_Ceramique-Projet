@@ -33,7 +33,7 @@ router.put("/editar/:id",productController.actualizar);
 
 /*** CREAR UN PRODUCTO ***/
 router.get("/crear",productController.crear);
-router.post("/crear",productController.guardar);
+router.post("/crear",upload.single("image"),productController.guardar);
 
 /*** BORRA UN PRODUCTO ***/
 router.delete("/delete/:id",productController.borrar);

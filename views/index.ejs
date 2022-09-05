@@ -68,8 +68,8 @@
                             <p class="oferta"><%=productos[i].discount %><br>OFF</p>
                             <div class="main-article">
                             <h4 class="description"><%= productos[i].name %></h4>
-                            <p class="price-viejo"><%= productos[i].price %></p>
-                            <p class="price-actual"><%= productos[i].price*(1-(productos[i].discount/100)) %></p>
+                            <p class="price-viejo">$<%= productos[i].price %></p>
+                            <p class="price-actual">$<%= productos[i].price*(1-(productos[i].discount/100)) %></p>
                     
                                 <%if(productos[i].stock!=0){%>
                                 <p class="discount">En stock - Entrega inmediata</p>
