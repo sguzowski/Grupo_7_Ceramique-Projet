@@ -27,8 +27,7 @@ let controller = {
         },
     lista: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        res.render("lista", {productos:productos});
-        
+        res.render("lista", {productos:productos}); 
         },
     guardar: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
