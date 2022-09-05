@@ -2,13 +2,17 @@
 const fs = require("fs");
 const path = require("path");
 const { CLIENT_RENEG_LIMIT } = require("tls");
-//const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+const productsFilePath = path.join(__dirname, "../data/products.json");
 
 
 let controller = {
     
     productDetail: function (req,res){
-        res.render("product-detail");
+
+        let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        producto = productos.find((p) => p.id == req.params.id);
+        res.render("product-detail", { producto: producto });
+
         },
     carro: function(req,res){
         res.render("carro");

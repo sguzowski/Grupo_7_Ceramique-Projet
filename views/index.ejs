@@ -29,10 +29,10 @@
                             <h4 class="description"><%= productos[i].name %></h4>
 
                             <%if(productos[i].discount>0){%>
-                                <p class="price-viejo"><%= productos[i].price %></p>
-                                <p class="price-actual"><%= productos[i].price*(1-(productos[i].discount/100)) %></p>
+                                <p class="price-viejo">$<%= productos[i].price %></p>
+                                <p class="price-actual">$<%= productos[i].price*(1-(productos[i].discount/100)) %></p>
                                 <% }else{%>
-                                <p class="price-actual2"><%= productos[i].price%></p>
+                                <p class="price-actual2">$<%= productos[i].price%></p>
                             <% } %>
                             
                             

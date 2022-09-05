@@ -2,8 +2,8 @@
 <html>
     <head>
         <%-include('./partials/head')%>
-        <link rel="stylesheet" href="../css/styleProductDetail.css">
-        <link rel="stylesheet" href="../css/styleHeader.css">
+        <link rel="stylesheet" href="/css/styleProductDetail.css">
+        <link rel="stylesheet" href="/css/styleHeader.css">
         <title>Detalle de producto</title>
     </head>
 <body>
@@ -11,32 +11,34 @@
 <main>
 
                 <div class="fotos">
-                        <div><img src="../bancoimagenes/vela-canela.jpg" alt="Vela" class="principal"></div>
+                        <div><img src="/bancoimagenes/<%=producto.image %>" alt="Vela" class="principal"></div>
                         <div class="secundaria">
-                            <img src="../bancoimagenes/vela-canela.jpg" alt="Vela">
-                            <img src="../bancoimagenes/canela2.jpg" alt="Vela">
-                            <img src="../bancoimagenes/canela3.jpg" alt="Vela">
+                            <img src="/bancoimagenes/<%=producto.image %>" alt="Vela">
+                            <img src="/bancoimagenes/<%=producto.image %>" alt="Vela">
+                            <img src="/bancoimagenes/<%=producto.image %>" alt="Vela">
                         </div>
                 </div>
                 <div class="descripcion">
-                    <h3 class="titulo">Velón artesanal aroma de Palosanto, limpieza y equilibrio</h3>
-                    <h4 class="marca">Marca: Las Velas de Mariano</h4>
-                    <p class="price">$1750</p>
+                    <h3 class="titulo"><%=producto.name %></h3>
+                    <h4 class="marca"><%=producto.marca %></h4>
+                    <p class="price">$<%= producto.price*(1-(producto.discount/100)) %></p>
                     <div class="cant">
                         <label>Cantidad:</label>
                         <input type="text" name= "cantidad">
                     </div>
                     <div class="carrito"><h3>AÑADIR AL CARRITO</h3></div>
+
                     <div class="impuestos">
+                    <%if(producto.stock!=0){%>
                     <h4 class="stock">En stock. Envío inmediato.</h4>
+                    <%}else{%>
+                    <h4 class="stock">Sin stock.</h4>
+                    <% } %>
                     <h4>Impuestos incluidos</h4>
                     </div>
                 
                     <h4 class="titulo-info">Descripción del producto</h4>  
-                    <p class="info">Velón de Palosanto fabricado de forma artesanal con 
-                        las mejores ceras. Este velón ayuda a reforzar peticiones de limpieza o 
-                        sanación, y a alcanzar estados de equilibrio con su agradable aroma. 
-                        Medidas: 5,5cm de diámetro x 14cm de alto.</p>
+                    <p class="info"><%=producto.description %></p>
                     <ul class="lista">
                         <li>Retirar las etiquetas antes de encender la vela.</li>
                         <li>La primera vez no encender menos de 30 minutos.</li>

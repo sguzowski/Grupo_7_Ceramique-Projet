@@ -26,6 +26,7 @@ router.get("/carro",productController.carro);
 /*** MUESTRA DETALLE DE PRODUCTO ***/
 router.get("/product-detail/:id",productController.productDetail);
 
+
 /*** EDITAR UN PRODUCTO ***/
 router.get("/editar/:id",productController.productDetail);
 router.put("/editar/:id",productController.actualizar);

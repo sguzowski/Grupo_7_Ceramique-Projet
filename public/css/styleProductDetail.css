@@ -83,10 +83,9 @@ div .secundaria{
     margin-top: 5px;
 }
 .impuestos{
-    display: flex;
+    display: block;
 }
 .impuestos h4{
-    margin-left: 10px;
     font-size:small;
     color:grey;
     margin-bottom: 20px;
@@ -99,6 +98,7 @@ div .stock{
     text-decoration: underline;
 }
 .info,.lista{
+    margin-bottom: 5px;
     color: gray;
     font-size: 15px;
 }
