@@ -114,7 +114,7 @@
   "name": "VELA RASCHI",
   "price": "5000",
   "discount": "10",
-  "category": "on",
+  "category": "vela",
   "description": "LA VELA DE RIVER",
   "image": "user-vacio.jpg",
   "stock": "5",
@@ -125,10 +125,21 @@
   "name": "CHUPETIN DE TORTA",
   "price": "50000",
   "discount": "10",
-  "category": "on",
+  "category": "vela",
   "description": "LA MEJOR DE TODAS ",
   "image": "user-vacio.jpg",
   "stock": "5",
   "marca": "JUAN"
+ },
+ {
+  "id": 1662346648685,
+  "name": "VELA DE CARNE",
+  "price": "1500",
+  "discount": "10",
+  "category": "velones",
+  "description": "LA MAS SABROSA JAJAJ",
+  "image": "user-vacio.jpg",
+  "stock": "3",
+  "marca": "LOCO"
  }
 ]
