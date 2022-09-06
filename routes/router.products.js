@@ -7,11 +7,10 @@ const multer = require("multer");
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "public/images/products");
+    cb(null, "public/bancoimagenes");
   },
   filename: function (req, file, cb) {
-    console.log({ file });
-
+    //console.log({ file });
     // cb(null, file.fieldname + "-" + Date.now());
     cb(null, Date.now() + "" + file.originalname);
   },
@@ -36,7 +35,7 @@ router.get("/crear",productController.crear);
 router.post("/crear",upload.single("image"),productController.guardar);
 
 /*** BORRA UN PRODUCTO ***/
-router.delete("/delete/:id",productController.borrar);
+router.delete("/borrar/:id",productController.borrar);
 
 /*** LISTA PRODUCTOS ***/
 router.get("/lista",productController.lista);

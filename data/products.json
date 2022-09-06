@@ -99,39 +99,6 @@
   "marca": "locas"
  },
  {
-  "id": 40,
-  "name": "VELÓN LAVANDA",
-  "price": 2200,
-  "discount": 10,
-  "category": "velones",
-  "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-  "image": "vela-sangre.jpg",
-  "stock": 5,
-  "marca": "locas"
- },
- {
-  "id": 1662344464055,
-  "name": "VELA RASCHI",
-  "price": "5000",
-  "discount": "10",
-  "category": "vela",
-  "description": "LA VELA DE RIVER",
-  "image": "user-vacio.jpg",
-  "stock": "5",
-  "marca": "CARTOCOR2"
- },
- {
-  "id": 1662344730875,
-  "name": "CHUPETIN DE TORTA",
-  "price": "50000",
-  "discount": "10",
-  "category": "vela",
-  "description": "LA MEJOR DE TODAS ",
-  "image": "user-vacio.jpg",
-  "stock": "5",
-  "marca": "JUAN"
- },
- {
   "id": 1662346648685,
   "name": "VELA DE LOCO",
   "price": "1500",
@@ -143,14 +110,13 @@
   "marca": "LOCAS"
  },
  {
-  "id": 1662424739588,
-  "name": "VELAS MAURICIO",
-  "price": "7000",
-  "discount": "10",
+  "id": 1662430958394,
+  "name": "VELIN",
+  "price": "3000",
+  "discount": "0",
   "category": "otra",
-  "description": "UNA CHOCHURA",
-  "image": "user-vacio.jpg",
-  "stock": "5",
-  "marca": "PEPEPE"
+  "description": "LA MEJOR DE TODAS ",
+  "stock": "50",
+  "marca": "LOCO"
  }
 ]

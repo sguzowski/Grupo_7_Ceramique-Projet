@@ -41,7 +41,6 @@ let controller = {
     guardar: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-        //console.log(req.file);
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
         const productoNuevo = {
         id: Date.now(),
@@ -54,12 +53,12 @@ let controller = {
         stock: req.body.stock,
         marca: req.body.marca,
         };
-
+     
         /*PREGUNTO SI ME VINO EL ARCHIVO DE IMAGEN*/
         if (req.file) {
             productoNuevo.image = req.file.filename;
           }
-
+          
         /*SUMO EL ARCHIVO A PRODUCTOS Y ESCRIBO DE NUEVO EL JSON*/
         productos.push(productoNuevo);
         const data = JSON.stringify(productos, null, " ");
@@ -100,8 +99,23 @@ let controller = {
      },
         
     borrar: function(req,res){
-        console.log("ENTRO A BORRAR")
-            },
+    
+    /*LEO EL ARCHIVO DE PRODUCTOS*/
+    let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+    /*BUSCO ID QUE VINO POR PARAMETRO*/
+    const producto = productos.find((p) => p.id == req.params.id);
+     /*FILTRO EL ID A ELIMINAR*/
+    productos = productos.filter((p) => p.id != req.params.id);
+    /*BORRO LA FOTO DEL ID ELIMINADO SIEMPRE Y CUANDO NO SEA LA POR DEFECTO*/
+    if (producto && producto.image !="user-vacio.jpg") {
+          fs.unlinkSync("./public/bancoimagenes/" + producto.image);
+    }
+    /*ACTUALIZO JSON Y REDIRECCIONO*/
+    const data = JSON.stringify(productos, null, " ");
+    fs.writeFileSync(productsFilePath, data);
+    res.redirect("/");
+    }
+
 }
 
 module.exports=controller;

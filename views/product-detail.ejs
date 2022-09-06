@@ -49,7 +49,7 @@
                     </ul>
                     <div class="botones">
                     <a href="editar/<%=producto.id %>" class="boton">EDITAR</a>
-                    <form action="" method="POST">
+                    <form action="/products/borrar/<%=producto.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="boton">ELIMINAR</button>
                     </form>
 
