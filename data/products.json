@@ -12,14 +12,14 @@
  },
  {
   "id": 2,
-  "name": "VELÓN DE SANGRE",
-  "price": 2500,
-  "discount": 0,
-  "category": "velones",
+  "name": "VELON DE LUD",
+  "price": "6000",
+  "discount": "0",
+  "category": "otra",
   "description": "Velones arómaticos de gran calidad con propósitos. Purificación,fortuna y poder",
   "image": "vela-sangre.jpg",
-  "stock": 0,
-  "marca": "brujas"
+  "stock": "15",
+  "marca": "RASCHI"
  },
  {
   "id": 3,
@@ -133,13 +133,24 @@
  },
  {
   "id": 1662346648685,
-  "name": "VELA DE CARNE",
+  "name": "VELA DE LOCO",
   "price": "1500",
   "discount": "10",
   "category": "velones",
   "description": "LA MAS SABROSA JAJAJ",
   "image": "user-vacio.jpg",
   "stock": "3",
-  "marca": "LOCO"
+  "marca": "LOCAS"
+ },
+ {
+  "id": 1662424739588,
+  "name": "VELAS MAURICIO",
+  "price": "7000",
+  "discount": "10",
+  "category": "otra",
+  "description": "UNA CHOCHURA",
+  "image": "user-vacio.jpg",
+  "stock": "5",
+  "marca": "PEPEPE"
  }
 ]

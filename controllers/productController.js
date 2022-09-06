@@ -9,6 +9,7 @@ let controller = {
     
     productDetail: function (req,res){
 
+        /*RENDERIZO LA VISTA DEL DETALLE DEL PRODUCTO DE ACUERDO AL ID SELECCIONADO*/
         let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         producto = productos.find((p) => p.id == req.params.id);
         res.render("product-detail", { producto: producto });
@@ -19,13 +20,21 @@ let controller = {
          },
 
     crear: function(req,res){
+        /*RENDERIZO LA VISTA DEL FORMULARIO DE CREAR*/
         res.render("crear");
          },
 
     editar: function(req,res){
-        res.render("editar");
+
+        /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE EDITAR DE PRODUCTOS*/
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        const producto = productos.find((p) => p.id == req.params.id);
+        res.render("editar", { producto: producto });
+
         },
     lista: function(req,res){
+
+        /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         res.render("lista", {productos:productos}); 
         },
@@ -33,9 +42,7 @@ let controller = {
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
         //console.log(req.file);
-
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
-
         const productoNuevo = {
         id: Date.now(),
         name: req.body.name,
@@ -48,7 +55,6 @@ let controller = {
         marca: req.body.marca,
         };
 
-        console.log(productoNuevo);
         /*PREGUNTO SI ME VINO EL ARCHIVO DE IMAGEN*/
         if (req.file) {
             productoNuevo.image = req.file.filename;
@@ -62,8 +68,37 @@ let controller = {
 
         },
     actualizar: function(req,res){
-        console.log("ENTRO A ACTUALIZAR")
-            },
+        /*LEO EL ARCHIVO DE PRODUCTOS*/
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        
+        /*BUSCO EL ID QUE VINO POR PARAMETRO Y REEMPLAZO LOS DATOS QUE VIENEN POR BODY*/
+        productos.forEach((p) => {
+        if (p.id == req.params.id) {
+            p.name = req.body.name;
+            p.price = req.body.price;
+            p.discount = req.body.discount;
+            p.description = req.body.description;
+            p.category = req.body.category;
+            p.stock =req.body.stock;
+            p.marca =req.body.marca;
+
+        /*VEO SI HAY ARCHIVO Y CAMBIO NOMBRE DE IMAGEN GUARDADA*/
+        if (req.file) {
+            fs.unlinkSync("./public/bancoimagenes/" + p.image);
+            p.image = req.file.image;
+            }
+            }
+        });
+
+    /*ACTUALIZO JSON*/
+    const data = JSON.stringify(productos, null, " ");
+    fs.writeFileSync(productsFilePath, data);
+
+    /*REDIRIJO A LOS NUEVOS DETALLES*/
+    res.redirect("/products/product-detail/" + req.params.id);
+    
+     },
+        
     borrar: function(req,res){
         console.log("ENTRO A BORRAR")
             },

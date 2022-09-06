@@ -2,8 +2,8 @@
 <html>
     <head>
         <%-include('./partials/head')%>
-        <link rel="stylesheet" href="../css/stylecrear-editar.css">
-        <link rel="stylesheet" href="../css/styleHeader.css">
+        <link rel="stylesheet" href="/css/stylecrear-editar.css">
+        <link rel="stylesheet" href="/css/styleHeader.css">
         <title>Editar Producto</title>
         </head>
 
@@ -11,52 +11,50 @@
 <%-include('./partials/header')%>
 <main>
         <h3>Editar un producto existente</h3>
-        <form action="/views/editar.ejs" method="POST">
+        <form action="/products/editar/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
-                <label class="texto">Nombre del producto:</label>
-                <input type="text" name="nombreProducto" placeholder="Ej. Velon Rojo">
+                <label class="texto" for="name">Nombre del producto:</label>
+                <input type="text" name="name" value="<%= producto.name %>" id="name">
             </div>
             <div>
-                <label class="texto">Descripción del producto:</label>
-                <input type="text" name="descripcionProducto" placeholder="Describa el producto aquí">
+                <label class="texto" for="description">Descripción:</label>
+                <input type="text" name="description" value="<%= producto.description %>" id="description">
             </div>
 
             <div>
-                <label class="texto">Imagen:</label>
+                <label class="texto" for="image">Imagen</label>
                 <label class="label-imagen">
                     Seleccionar Imagen
-                    <input type="file" name="imagen" class="input-imagen">
+                    <input type="file" name="image" class="input-imagen" id="image">
                 </label>
             </div><br>
-            <div class ="categoria">
+            <div>
                 <label class="texto">Categoría del producto:</label>
-                <input type="radio" id= "velas" name="categoria">
-                <label class="texto">Velas</label>
-                <input type="radio" id= "velones" name="categoria">
-                <label class="texto">Velones</label>
-                <input type="radio" id= "accesorios" name="categoria">
-                <label class="texto">Accesorios</label>
-                <input type="radio" id= "otra" name="categoria">
-                <label class="texto">Otra</label>
+            <select name="category" class="opciones">
+                <option value="velas"<%= (producto.category == "velas")? "selected":"" %>>Velas</option>
+                <option value="velones"<%= (producto.category == "velones")? "selected":"" %>>Velones</option>
+                <option value="accesorios"<%= (producto.category == "accesorios")? "selected":"" %>>Accesorios</option>
+                <option value="otra"<%= (producto.category == "otra")? "selected":"" %>>Otra</option>
+            </select>
             </div><br>
 
             <div>
-                <label class="texto">Marca del producto:</label>
-                <input type="text" name="marca" placeholder="Ej. Cartocor">
+                <label class="texto" for="marca">Marca:</label>
+                <input type="text" name="marca" value="<%= producto.marca %>" id="marca">
             </div>
 
             <div>
-                <label class="texto">Stock de producto:</label>
-                <input type="number" name="stock" placeholder="10">
+                <label class="texto" for="stock">Stock:</label>
+                <input type="number" name="stock" value="<%= producto.stock %>" id="stock">
             </div>
 
             <div>
-                <label class="texto">Precio del producto:</label>
-                <input type="number" name="precio" placeholder="Ej. 2000 (sin signo $)">
+                <label class="texto" for="price">Precio:</label>
+                <input type="number" name="price" value="<%= producto.price %>" id="price">
             </div>
             <div>
-                <label class="texto">Descuento:</label>
-                <input type="number" name="precio" placeholder="Ej. 20 ( valor 1 al 100)">
+                <label class="texto" for="discount">Descuento:</label>
+                <input type="number" name="discount" value="<%= producto.discount%>" id="discount">
             </div>
             <button type="submit" class="boton">EDITAR TU PRODUCTO</button>
         

@@ -35,6 +35,18 @@ div input{
     margin-bottom: 20px;
     
 }
+.opciones {
+    border: solid 1px grey;
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
 .input-imagen{
     display:none;
 }

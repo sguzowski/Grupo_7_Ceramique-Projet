@@ -28,8 +28,8 @@ router.get("/product-detail/:id",productController.productDetail);
 
 
 /*** EDITAR UN PRODUCTO ***/
-router.get("/editar/:id",productController.productDetail);
-router.put("/editar/:id",productController.actualizar);
+router.get("/product-detail/editar/:id",productController.editar);
+router.put("/editar/:id",upload.single("image"),productController.actualizar);
 
 /*** CREAR UN PRODUCTO ***/
 router.get("/crear",productController.crear);

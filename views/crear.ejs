@@ -27,16 +27,13 @@
                     <input type="file" id="image" name="image" class="input-imagen">
                 </label><br>
             </div>
-            <div class ="categoria">
-                <label class="texto" for="category" >Categoría del producto:</label>
-                <input type="radio" id= "velas" name="category" id="category" value="velas">
-                <label class="texto" for="velas">Velas</label>
-                <input type="radio" id= "velones" name="category" value="velones">
-                <label class="texto" for="velones">Velones</label>
-                <input type="radio" id= "accesorios" name="category" value="accesorios">
-                <label class="texto" for="accesorios">Accesorios</label>
-                <input type="radio" id= "otra" name="category" value="otra">
-                <label class="texto" for="otra">Otra</label>
+            <div>
+                <select name="category" class="opciones">
+                    <option value="velas">Velas</option>
+                    <option value="velones">Velones</option>
+                    <option value="accesorios">Accesorios</option>
+                    <option value="otra">Otra</option>
+                </select>
             </div><br>
 
             <div>
@@ -60,7 +57,6 @@
             </div>
             <button type="submit" class="boton">CREA TU PRODUCTO</button>
         
-            <p>¿Desea editar un producto? <a href="/products/editar" class="iniciar">Ir a editar producto</a></p>
         </form>
     </main>
 <%-include('./partials/footer')%>
