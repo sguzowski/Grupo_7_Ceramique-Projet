@@ -2,24 +2,24 @@
  {
   "id": 1,
   "name": "VELÓN CANELA",
-  "price": 1750,
-  "discount": 0,
+  "price": "1750",
+  "discount": "0",
   "category": "velones",
   "description": "Vela natural hecha de manera artesanal con cera vegetal. Sin derivados de petróleo ni productos químicos. Son velas energéticas que se usan para purificar y limpiar tu hogar o negocio de energías no deseadas.",
-  "image": "vela-canela.jpg",
-  "stock": 5,
+  "image": "16625183653181662431981404vela-ruda.jpg",
+  "stock": "5",
   "marca": "cartocor"
  },
  {
   "id": 2,
-  "name": "VELON DE LUD",
+  "name": "VELON PROFE",
   "price": "6000",
   "discount": "0",
   "category": "otra",
   "description": "Velones arómaticos de gran calidad con propósitos. Purificación,fortuna y poder",
-  "image": "vela-sangre.jpg",
+  "image": "vela-miel.jpg",
   "stock": "15",
-  "marca": "RASCHI"
+  "marca": "MAMSMAS"
  },
  {
   "id": 3,
@@ -35,12 +35,12 @@
  {
   "id": 4,
   "name": "VELÓN LAVANDA",
-  "price": 2200,
-  "discount": 0,
+  "price": "2200",
+  "discount": "0",
   "category": "velones",
   "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-  "image": "vela-sangre.jpg",
-  "stock": 15,
+  "image": "16625186045231662518204831vela-color.jpg",
+  "stock": "15",
   "marca": "locas"
  },
  {
@@ -50,7 +50,7 @@
   "discount": 0,
   "category": "velones",
   "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-  "image": "vela-sangre.jpg",
+  "image": "vela-lavanda.jpg",
   "stock": 0,
   "marca": "locas"
  },
@@ -61,7 +61,7 @@
   "discount": 0,
   "category": "velones",
   "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-  "image": "vela-sangre.jpg",
+  "image": "vela-lavanda.jpg",
   "stock": 4,
   "marca": "locas"
  },
@@ -72,7 +72,7 @@
   "discount": 10,
   "category": "velones",
   "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-  "image": "vela-sangre.jpg",
+  "image": "vela-lavanda.jpg",
   "stock": 0,
   "marca": "locas"
  },
@@ -83,7 +83,7 @@
   "discount": 20,
   "category": "velones",
   "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-  "image": "vela-sangre.jpg",
+  "image": "vela-lavanda.jpg",
   "stock": 0,
   "marca": "locas"
  },
@@ -94,7 +94,7 @@
   "discount": 9,
   "category": "velones",
   "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
-  "image": "vela-sangre.jpg",
+  "image": "vela-lavanda.jpg",
   "stock": 10,
   "marca": "locas"
  },
@@ -116,6 +116,7 @@
   "discount": "0",
   "category": "otra",
   "description": "LA MEJOR DE TODAS ",
+  "image": "user-vacio.jpg",
   "stock": "50",
   "marca": "LOCO"
  }

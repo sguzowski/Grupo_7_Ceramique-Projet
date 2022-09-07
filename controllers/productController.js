@@ -84,7 +84,7 @@ let controller = {
         /*VEO SI HAY ARCHIVO Y CAMBIO NOMBRE DE IMAGEN GUARDADA*/
         if (req.file) {
             fs.unlinkSync("./public/bancoimagenes/" + p.image);
-            p.image = req.file.image;
+            p.image = req.file.filename;
             }
             }
         });
