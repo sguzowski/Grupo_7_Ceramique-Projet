@@ -20,7 +20,7 @@ const productsRouter = require('./routes/router.products'); // Rutas products
 
 app.use('/',userRouter);
 app.use('/products', productsRouter);
-
+app.use('/user', userRouter);
 
 
 /*

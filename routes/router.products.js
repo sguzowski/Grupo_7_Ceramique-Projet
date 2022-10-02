@@ -17,7 +17,10 @@ let storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+//LLAMO AL CONTROLADOR DE PRODUCTOS
 const productController = require("../controllers/productController");
+//LLAMO A LAS VALIDACIONES DE PRODUCTOS
+const validacionesProducto = require("../middlewares/productValidation");
 
 /*** MUESTRA CARRO DE COMPRAS - AUN SIN FUNCIONES ***/
 router.get("/carro",productController.carro);

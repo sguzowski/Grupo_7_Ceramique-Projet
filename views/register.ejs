@@ -2,8 +2,8 @@
 <html>
     <head>
         <%-include('./partials/head')%>
-        <link rel="stylesheet" href="css/styleRegister.css">
-        <link rel="stylesheet" href="css/styleHeader.css">
+        <link rel="stylesheet" href="../css/styleRegister.css">
+        <link rel="stylesheet" href="../css/styleHeader.css">
         <title>Register</title>
         </head>
 
@@ -11,28 +11,31 @@
 <%-include('./partials/header')%>
 <main>
         <h3>Crea tu cuenta</h3>
-        <form action="/views/register.html" method="POST">
+        <form action="/user/register" method="POST" enctype="multipart/form-data">
             <div>
                 <label class="texto">Nombre Completo:</label>
-                <input type="text" name="nya" placeholder="Ej. Juan Perez">
+                <input type="text" name="nombre" placeholder="Ej. Juan Perez">
             </div>
             <div>
                 <label class="texto">Nombre Usuario:</label>
-                <input type="text" name="nombreUsuario" placeholder="Ej. jperez">
+                <input type="text" name="usuario" placeholder="Ej. jperez">
+                <% if(locals.msgRepetido){ %>
+                    <p class="error"><%= locals.msgRepetido %> </p>
+                  <% } %>
             </div>
 
             <div>
                 <label class="texto">Contraseña:</label>
-                <input type="password" name="passwordUsuario">
+                <input type="password" name="password" placeholder ="Largo minimo 6 caracteres Ej:a12345">
             </div>
             <div>
                 <label class="texto">Confirmar Contraseña:</label>
-                <input type="password" name="passwordUsuario-config">
+                <input type="password" name="password2" placeholder ="Largo minimo 6 caracteres Ej:a12345">
             </div>
 
             <div>
                 <label class="texto">Correo Electronico:</label>
-                <input type="email" name="emailUsuario" placeholder="Ej. juan.perez@gmail.com">
+                <input type="email" name="email" placeholder="Ej. juan.perez@gmail.com">
             </div>
 
             <div>
@@ -43,6 +46,11 @@
             <div>
                 <label class="texto">Telefono:</label>
                 <input type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)">
+            </div>
+            <div>
+                <label class="texto">Imagen:</label>
+                    <input type="file" id="image" name="image" class="input-imagen">
+                </label><br>
             </div>
             <button type="submit" class="boton">CREA TU CUENTA</button>
             <input type="checkbox" name="terminos" class="cheq"><label for="terminos">Acepto los terminos y

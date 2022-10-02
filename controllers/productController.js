@@ -4,6 +4,8 @@ const path = require("path");
 const { CLIENT_RENEG_LIMIT } = require("tls");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 
+const { validationResult } = require("express-validator"); //LLAMO AL OBJETO DE ERRORES DE VALIDACIONES
+
 
 let controller = {
     
@@ -14,7 +16,7 @@ let controller = {
         producto = productos.find((p) => p.id == req.params.id);
         res.render("product-detail", { producto: producto });
 
-        },
+        },  
     carro: function(req,res){
         res.render("carro");
          },

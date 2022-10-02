@@ -65,6 +65,10 @@ form p a{
     font-weight: bold;
     color: coral;
 }
+.error{
+    margin-left: 35%;
+    color: red;
+}
 
 
 footer{

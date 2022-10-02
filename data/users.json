@@ -1,58 +1,52 @@
 [
-{
-    "id": 1,
-    "name": "Juan Perez",
-    "usuario": "jperez",
-    "password": 12345,
-    "email": "juanp@gmail.com",
-    "edad": "35",
-    "telefono": "2644766666",
-    "categoria":"moderador",
-    "imagen":"user-vacio.jpg"
-},
-{
-    "id": 2,
-    "name": "Juan Sanchez",
-    "usuario": "jsanchez",
-    "password": 78954,
-    "email": "jsanchez@gmail.com",
-    "edad": "20",
-    "telefono": "2644761236",
-    "categoria":"usuario",
-    "imagen":"user-vacio.jpg"
-},
-{
-    "id": 3,
-    "name": "Mauri Raschi",
-    "usuario": "mraschi",
-    "password": 87934,
-    "email": "mraschi@gmail.com",
-    "edad": "34",
-    "telefono": "2644754666",
-    "categoria":"usuario",
-    "imagen":"user-vacio.jpg"
-},
-{
-    "id": 4,
-    "name": "Matias Mengual",
-    "usuario": "jmengual",
-    "password": 36985,
-    "email": "mengual@gmail.com",
-    "edad": "40",
-    "telefono": "26447123666",
-    "categoria":"usuario",
-    "imagen":"user-vacio.jpg"
-},
-{
-    "id": 5,
-    "name": "Colombia P",
-    "usuario": "pcolombia",
-    "password": 74125,
-    "email": "colombia@gmail.com",
-    "edad": "18",
-    "telefono": "1424766666",
-    "categoria":"usuario",
-    "imagen":"user-vacio.jpg"
-}
-
+ {
+  "id": 1,
+  "nombre": "Juan Perez",
+  "usuario": "jperez",
+  "password": 12345,
+  "email": "juanp@gmail.com",
+  "edad": "35",
+  "telefono": "2644766666",
+  "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664744298024,
+  "nombre": "ludm",
+  "usuario": "lmu",
+  "password": "123",
+  "email": "ludmiladuran96@gmail.com",
+  "edad": "23",
+  "telefono": "1234",
+  "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664747706526,
+  "nombre": "pepe",
+  "usuario": "jpepe",
+  "password": "1234",
+  "email": "ma@gmail",
+  "edad": "43",
+  "telefono": "1234",
+  "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664753727615,
+  "nombre": "mauricio",
+  "usuario": "jajajajja",
+  "password": "123456",
+  "email": "maury_raschi@hotmail.com",
+  "edad": "25",
+  "telefono": "123456",
+  "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664754416706,
+  "nombre": "Mauricio ",
+  "usuario": "raschiad",
+  "password": "1234567",
+  "email": "maury_raschi@hotmail.com",
+  "edad": "25",
+  "telefono": "123456",
+  "image": "user-vacio.jpg"
+ }
 ]
