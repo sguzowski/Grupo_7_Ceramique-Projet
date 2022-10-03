@@ -65,9 +65,11 @@ form p a{
     font-weight: bold;
     color: coral;
 }
-.error{
-    margin-left: 35%;
+.errores{
+    display: block;
+    text-align: center;
     color: red;
+    opacity: 60%;
 }
 
 

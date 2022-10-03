@@ -2,23 +2,30 @@
 <html>
     <head>
         <%-include('./partials/head')%>
-        <link rel="stylesheet" href="../css/styleRegister.css">
-        <link rel="stylesheet" href="../css/styleHeader.css">
+      <link rel="stylesheet" href="../css/styleRegister.css"> 
+       <link rel="stylesheet" href="../css/styleHeader.css"> 
         <title>Register</title>
         </head>
 
 <body>
 <%-include('./partials/header')%>
 <main>
+         <% if(locals.errores){%>
+        <ol class="errores">
+        <% for(const error in locals.errores ){ %>
+        <li><%= errores[error].msg%></li>
+        <% } %>
+        </ol>
+        <%}%>
         <h3>Crea tu cuenta</h3>
         <form action="/user/register" method="POST" enctype="multipart/form-data">
             <div>
                 <label class="texto">Nombre Completo:</label>
-                <input type="text" name="nombre" placeholder="Ej. Juan Perez">
+                <input type="text" name="nombre" placeholder="Ej. Juan Perez" value="<%= locals.old && old.nombre ? old.nombre :'' %>">
             </div>
             <div>
                 <label class="texto">Nombre Usuario:</label>
-                <input type="text" name="usuario" placeholder="Ej. jperez">
+                <input type="text" name="usuario" placeholder="Ej. jperez" value="<%= locals.old && old.usuario ? old.usuario :'' %>">
                 <% if(locals.msgRepetido){ %>
                     <p class="error"><%= locals.msgRepetido %> </p>
                   <% } %>
@@ -35,21 +42,21 @@
 
             <div>
                 <label class="texto">Correo Electronico:</label>
-                <input type="email" name="email" placeholder="Ej. juan.perez@gmail.com">
+                <input type="email" name="email" placeholder="Ej. juan.perez@gmail.com" value="<%= locals.old && old.email ? old.email :'' %>">
             </div>
 
             <div>
                 <label class="texto">Edad:</label>
-                <input type="numer" name="edad" placeholder="Ej. 34">
+                <input type="numer" name="edad" placeholder="Ej. 34" value="<%= locals.old && old.edad ? old.edad :'' %>">
             </div>
 
             <div>
                 <label class="texto">Telefono:</label>
-                <input type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)">
+                <input type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)" value="<%= locals.old && old.telefono ? old.telefono :'' %>">
             </div>
             <div>
                 <label class="texto">Imagen:</label>
-                    <input type="file" id="image" name="image" class="input-imagen">
+                    <input type="file" id="image" name="image" class="input-imagen"> ? 
                 </label><br>
             </div>
             <button type="submit" class="boton">CREA TU CUENTA</button>

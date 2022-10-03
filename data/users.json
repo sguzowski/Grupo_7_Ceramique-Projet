@@ -68,5 +68,65 @@
   "edad": "25",
   "telefono": "124567893",
   "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664805717656,
+  "nombre": "damian",
+  "usuario": "ddiaz",
+  "password": "1234567",
+  "email": "ludmiladuran96@gmail.com",
+  "edad": "25",
+  "telefono": "123456",
+  "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664813081329,
+  "nombre": "jorge",
+  "usuario": "jperes",
+  "password": "1234567",
+  "email": "ludmiladuran96@gmail.com",
+  "edad": "25",
+  "telefono": "123456",
+  "image": "16648130812911662431046323velo-euca.jpg"
+ },
+ {
+  "id": 1664813393861,
+  "nombre": "domingo",
+  "usuario": "jperon",
+  "password": "$2b$10$D1SXdnAhAFplS9OwOuqcmekwUNwyD/thl59SJ3W50OR4TklDIKDfq",
+  "email": "maury_raschi@hotmail.com",
+  "edad": "55",
+  "telefono": "123456",
+  "image": "16648133938281662431046323velo-euca.jpg"
+ },
+ {
+  "id": 1664814393717,
+  "nombre": "JORGE",
+  "usuario": "MRAS",
+  "password": "$2b$10$OazyAAP52/NQ4kt1XSXppOpuFu/yW0Zv1PaKHDfTaoKkPxOD1.yEm",
+  "email": "maury_raschi@hotmail.com",
+  "edad": "25",
+  "telefono": "12345",
+  "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664817867328,
+  "nombre": "Mauricio Angel",
+  "usuario": "mraschi",
+  "password": "$2b$10$JnUaU7jVV5pUWIUPj/pes.J.GsHNqqCxnOxuJOplc3KpX9i1J/gE2",
+  "email": "maury_raschi@hotmail.com",
+  "edad": "25",
+  "telefono": "12345",
+  "image": "16648178672901662431046323velo-euca.jpg"
+ },
+ {
+  "id": 1664821490002,
+  "nombre": "carlos",
+  "usuario": "locura",
+  "password": "$2b$10$ifnDfxM3GXBrXaJpRGN1VeU/bcZyoCasMiZA3MzJ2X62CvgYuFQFW",
+  "email": "juancho@arcor.com",
+  "edad": "28",
+  "telefono": "123456",
+  "image": "user-vacio.jpg"
  }
 ]

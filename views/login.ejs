@@ -2,8 +2,8 @@
 <html>
 <head>
 <%-include('./partials/head')%>
-<link rel="stylesheet" href="css/styleLogin.css">
-<link rel="stylesheet" href="css/styleHeader.css">
+<link rel="stylesheet" href="../css/styleLogin.css">
+<link rel="stylesheet" href="../css/styleHeader.css">
 <title>Login</title>
 </head>
 
@@ -11,20 +11,20 @@
 <%-include('./partials/header')%>
 <main>
         <h3>Logueate</h3>
-        <form action="/views/login.html" method="POST">
+        <form action="/user/login" method="GET" enctype="text/plane">
             <div>
                 <label class="texto">Nombre Usuario:</label>
-                <input type="text" name="nombreUsuario" placeholder="Ej. Juan Perez">
+                <input type="text" name="usuario" placeholder="Ej. Juan Perez">
             </div>
 
             <div>
                 <label class="texto">Contraseña:</label>
-                <input type="password" name="passwordUsuario">
+                <input type="password" name="password">
             </div>
             <button type="submit" class="boton">INGRESÁ</button>
-
-            <p>¿No estas registrado? <a href="/register" class="iniciar">Registrate</a></p>
         </form>
+            <p>¿No estas registrado? <a href="/register" class="iniciar">Registrate</a></p>
+        
     </main>
 <%-include('./partials/footer')%>
 </body>

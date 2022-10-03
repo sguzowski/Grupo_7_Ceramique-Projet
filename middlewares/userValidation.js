@@ -33,7 +33,7 @@ const validaciones = [
     .withMessage("No es un email valido"),
     body("edad")
     .notEmpty()
-    .withMessage("El email es obligatorio")
+    .withMessage("La edad es obligatoria")
     .bail()
     .isInt()
     .withMessage("No es una edad valida"),
