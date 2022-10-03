@@ -20,4 +20,5 @@ const validaciones = [
     .isLength({ max: 10 })
     .withMessage("El password debe terner como máximo 10 caracteres"),  
 ];
+
 module.exports = validaciones;

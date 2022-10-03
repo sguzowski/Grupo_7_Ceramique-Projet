@@ -52,6 +52,12 @@ div input{
     margin-bottom: 20px;
     text-align: center;
 }
+.errores{
+    display: block;
+    text-align: center;
+    color: red;
+    opacity: 60%;
+}
 form p{
     margin-left: 25%;
     margin-bottom: 20px;

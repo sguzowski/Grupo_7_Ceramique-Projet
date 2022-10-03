@@ -14,7 +14,7 @@ let controller = {
         /*RENDERIZO LA VISTA DEL DETALLE DEL PRODUCTO DE ACUERDO AL ID SELECCIONADO*/
         let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         producto = productos.find((p) => p.id == req.params.id);
-        res.render("product-detail", { producto: producto });
+        res.render("product-detail", { producto: producto,loguin:req.session.usuarioLogueado });
 
         },  
     carro: function(req,res){
@@ -22,23 +22,34 @@ let controller = {
          },
 
     crear: function(req,res){
-        /*RENDERIZO LA VISTA DEL FORMULARIO DE CREAR*/
-        res.render("crear");
+
+        if(req.session.usuarioLogueado){
+
+            res.render("crear", {loguin:req.session.usuarioLogueado});
+            /*RENDERIZO LA VISTA DEL FORMULARIO DE CREAR*/
+
+        }else{
+            res.redirect("/user/login")
+        }
          },
 
     editar: function(req,res){
 
+        if(req.session.usuarioLogueado){
         /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE EDITAR DE PRODUCTOS*/
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         const producto = productos.find((p) => p.id == req.params.id);
-        res.render("editar", { producto: producto });
-
+        res.render("editar", { producto: producto, loguin:req.session.usuarioLogueado});
+        
+         } else{
+            res.redirect("/user/login")
+         }
         },
     lista: function(req,res){
 
         /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        res.render("lista", {productos:productos}); 
+        res.render("lista", {productos:productos ,loguin:req.session.usuarioLogueado}); 
         },
     guardar: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -99,9 +110,10 @@ let controller = {
     res.redirect("/products/product-detail/" + req.params.id);
     
      },
-        
+     
     borrar: function(req,res){
     
+    if(req.session.usuarioLogueado){
     /*LEO EL ARCHIVO DE PRODUCTOS*/
     let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     /*BUSCO ID QUE VINO POR PARAMETRO*/
@@ -116,8 +128,10 @@ let controller = {
     const data = JSON.stringify(productos, null, " ");
     fs.writeFileSync(productsFilePath, data);
     res.redirect("/");
+    }else{
+        res.redirect("/user/login")
+        }
     }
-
 }
 
 module.exports=controller;

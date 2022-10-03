@@ -18,53 +18,54 @@ const bcrypt= require ("bcrypt");
 let controller = {
     index: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        res.render("index", {productos:productos});
+        res.render("index", {productos:productos,loguin:req.session.usuarioLogueado});
         //const productsVisited = products.filter((p) => p.category == "visited");
         //const productsInSale = products.filter((p) => p.category == "in-sale");
         },
     listarUsuarios: function(req,res){
         /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
         const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        res.render("listaUsuarios",{usuarios:usuarios});
+        res.render("listaUsuarios",{usuarios:usuarios,loguin:req.session.usuarioLogueado});
          },
 
     login: function(req,res){
         res.render("login");
          },
     logueate: function(req,res){
-        // let errores = validationResult(req);
-        // let usuarioLogueado;
+        let errores = validationResult(req);
+        let usuarioLogueado;
         console.log(req.body.usuario);
         console.log(req.body.password);
-        // console.log(errores.errors);
+        //onsole.log(errores.errors);
         
-        // if(errores.isEmpty()){
-        // const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        // for(let i=0; i<usuarios.length; i++ ){
-        //     if(usuarios[i].usuario ===req.body)
-        //     {
-        //         if(bcrypt.compareSync(req.body.password,usuarios[i].password))
-        //         {
-        //             usuarioLogueado = usuarios[i];
-        //             console.log("ENCONTRE EL USUARIO");
-        //             break;
-        //         }
+        if(errores.isEmpty()){
+        const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+        for(let i=0; i<usuarios.length; i++ ){
+            if(usuarios[i].usuario ==req.body.usuario)
+            {
+                if(bcrypt.compareSync("req.body.password",usuarios[i].password))
+                {
+                    usuarioLogueado = usuarios[i];
+                    console.log("ENCONTRE EL USUARIO");
+                    break;
+                }
                                     
-        //     }
+            }
 
-        // }
-        // if(usuarioLogueado==undefined){
-        //     let error ="Usuario no registrado o contraseña incorrecta";
-        //     console.log("NO ENCONTRE EL USUARIO");
-        //     return res.render("login",{error:error});
+        }
+        if(usuarioLogueado==undefined){
+            let error ="Usuario no registrado o contraseña incorrecta";
+            console.log("NO ENCONTRE EL USUARIO");
+            return res.render("login",{error:error});
            
-        // }
-        // //req.session.usuarioLogueado = usuarioLogueado;
-        // res.render("contacto")
-        // }else{
-        // console.log("HAY ERRORES DE VALIDACION");
-        // res.render("login",{errores:errores.mapped()});
-        // }
+        }
+        req.session.usuarioLogueado = usuarioLogueado;
+
+        res.redirect("/");
+
+        }else{
+        res.render("login",{errores:errores.mapped()});
+        }
         },
 
     register: function(req,res){
@@ -79,11 +80,12 @@ let controller = {
         let repetido = usuarios.find((u) => u.usuario == req.body.usuario);
         if(repetido==undefined && errores.errors.length==0){
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
+        let salt = bcrypt.genSaltSync(10);
         const usuarioNuevo = {
         id: Date.now(),
         nombre: req.body.nombre,
         usuario: req.body.usuario,
-        password: bcrypt.hashSync("req.body.password",10),
+        password: bcrypt.hashSync("req.body.password",salt),
         email: req.body.email,
         edad: req.body.edad,
         telefono: req.body.telefono,
@@ -114,11 +116,11 @@ let controller = {
         },
 
     contactos: function(req,res){
-        res.render("contacto");
+        res.render("contacto",{loguin:req.session.usuarioLogueado});
         },
 
     nosotros: function(req,res){
-         res.render("nosotros");
+         res.render("nosotros",{loguin:req.session.usuarioLogueado});
         }
     
 }

@@ -10,8 +10,16 @@
 <body>
 <%-include('./partials/header')%>
 <main>
+        <% if(locals.errores){%>
+        <ol class="errores">
+        <% for(const error in locals.errores ){ %>
+        <li><%= errores[error].msg%></li>
+        <% } %>
+        </ol>
+        <%}%>
+        <ol class="errores"><%=locals.error%></ol>
         <h3>Logueate</h3>
-        <form action="/user/login" method="GET" enctype="text/plane">
+        <form action="/user/login" method="POST" >
             <div>
                 <label class="texto">Nombre Usuario:</label>
                 <input type="text" name="usuario" placeholder="Ej. Juan Perez">
@@ -22,8 +30,9 @@
                 <input type="password" name="password">
             </div>
             <button type="submit" class="boton">INGRESÁ</button>
-        </form>
             <p>¿No estas registrado? <a href="/register" class="iniciar">Registrate</a></p>
+        </form>
+           
         
     </main>
 <%-include('./partials/footer')%>

@@ -4,12 +4,15 @@ app.use(express.static('public')); //COLOCO ACCESIBLE LA CARPETA PUBLIC
 const path = require('path'); // USO EL METODO PATH PARA LAS DIRECCIONES 
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const session = require ("express-session"); // REQUIERO SESSION PARA TRABAJAR CON LA LIBRERIA
+const bodyparser = require("body-parser");
 
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 //CON ESTA LINEA LE DIGO A EXPRESS QUE USO EJS
 app.set("view engine","ejs"); 
 app.use(session({secret:"secreto"})); //CONFIGURO SESIONES
+app.use(bodyparser.urlencoded({ extended: false }));
+
 
 // LEVANTO EL SERVIDOR 
 app.listen(3003, ()=>{

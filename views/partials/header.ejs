@@ -10,7 +10,7 @@
             </div>
             <div class="divcuenta">
                 <a href="/login"><img src="/design/cuenta.png" alt="micuenta"></a>
-                <p>Mi Cuenta</p>
+                <p><%= locals.loguin?.nombre ? locals.loguin?.nombre :'Mi Cuenta' %></p>
             </div>
             <div class="divcarro">
                 <a href="/products/carro"><img src="/design/compras.png" alt="carrito"></a>

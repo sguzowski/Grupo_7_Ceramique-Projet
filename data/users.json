@@ -128,5 +128,15 @@
   "edad": "28",
   "telefono": "123456",
   "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664827650763,
+  "nombre": "locura",
+  "usuario": "mauryras",
+  "password": "$2b$10$BW2o3x/WB.e9.V8u1UXjm.BDHbWCv./J1FDfKrjOIS1ymuKv0JLtG",
+  "email": "ludmiladuran96@gmail.com",
+  "edad": "25",
+  "telefono": "123456",
+  "image": "user-vacio.jpg"
  }
 ]

@@ -27,7 +27,7 @@ router.get("/",userController.index);
 
 /*** LOGUEAR UN USUARIO ***/
 router.get("/login",userController.login);
-router.post("/login",userController.logueate);
+router.post("/login",loginValidations,userController.logueate);
 
 /*** CREAR UN USUARIO ***/
 router.get("/register",userController.register);
