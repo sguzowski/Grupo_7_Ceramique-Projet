@@ -20,8 +20,10 @@ let controller = {
         //const productsVisited = products.filter((p) => p.category == "visited");
         //const productsInSale = products.filter((p) => p.category == "in-sale");
         },
-    buscar: function(req,res){
-        res.render("");
+    listarUsuarios: function(req,res){
+        /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
+        const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+        res.render("listaUsuarios",{usuarios:usuarios});
          },
 
     login: function(req,res){
@@ -34,13 +36,13 @@ let controller = {
 
     nuevo: function(req,res){
         let errores = validationResult(req);
-        const usuario = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+        const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
         console.log(errores.errors);
         /* CONSULTO SI EL USUARIO EXISTE  Y SI EXISTE NO LO GUARDO - SI HAY ERRORES NO GUARDO NADA*/
-        let repetido = usuario.find((u) => u.usuario == req.body.usuario);
+        let repetido = usuarios.find((u) => u.usuario == req.body.usuario);
         
         if(repetido==undefined && errores.errors.length==0){
-
+            
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
         const usuarioNuevo = {
         id: Date.now(),
@@ -59,11 +61,11 @@ let controller = {
           }
           
         /*SUMO EL ARCHIVO A PRODUCTOS Y ESCRIBO DE NUEVO EL JSON*/
-        usuario.push(usuarioNuevo);
-        const data = JSON.stringify(usuario, null, " ");
+        usuarios.push(usuarioNuevo);
+        const data = JSON.stringify(usuarios, null, " ");
         fs.writeFileSync(usersFilePath, data);
-        res.redirect("/");
-        //res.render("register");
+        res.render("listaUsuarios",{usuarios:usuarios});
+      
         }else{
             let msgRepetido = "Error: Nombre de usuario repetido!!!! Escriba otro usuario para registrar"
             res.render("register",{msgRepetido:msgRepetido});

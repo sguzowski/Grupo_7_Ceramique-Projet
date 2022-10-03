@@ -48,5 +48,25 @@
   "edad": "25",
   "telefono": "123456",
   "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664760451734,
+  "nombre": "Juan ",
+  "usuario": "juancho",
+  "password": "1234567",
+  "email": "juancho@arcor.com",
+  "edad": "27",
+  "telefono": "123456789",
+  "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1664760780088,
+  "nombre": "sebastian",
+  "usuario": "seba",
+  "password": "1234567",
+  "email": "seba@arcor.com",
+  "edad": "25",
+  "telefono": "124567893",
+  "image": "user-vacio.jpg"
  }
 ]

@@ -34,5 +34,5 @@ router.post("/register",upload.single("image"),usuarioValidations,userController
 
 router.get("/nosotros",userController.nosotros);
 router.get("/contacto",userController.contactos);
-
+router.get("/listaUsuarios",userController.listarUsuarios);
 module.exports = router;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('./partials/head')%>
+    <link rel="stylesheet" href="../css/style1.css">
+    <link rel="stylesheet" href="../css/styleHeader.css">
+        <title>Document</title>
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+        <main>
+            <h1 class="title-products" >USUARIOS REGISTRADOS</h1>
+            <section class="destacados">
+                <% for(let i=0;i<usuarios.length;i++){%>
+                    <div class="products">
+                        <article>
+                        <a href="" class="link-productos">
+                            <img src="/bancoimagenes/<%=usuarios[i].image %>" alt="Vela" class="product_img">
+    
+                            <div class="main-article">
+    
+                                <h3 class="usuario">Nombre: <%= usuarios[i].nombre %></h3>
+                                <h1 class="usuario">Usuario: <%= usuarios[i].usuario %></h1>
+                                <h1 class="usuario">Edad: <%= usuarios[i].edad %></h1>
+                                <h1 class="usuario">Email: <%= usuarios[i].email %></h1>
+                                <h1 class="usuario">Tel: <%= usuarios[i].telefono %></h1>
+                                
+
+                                <div class="botones">
+                                <a href="" class="b-ver" name="anadir">Eliminar</a>
+                                <a href="" class="b-ver" name="detalles">Editar</a>
+                                </div>
+                            </div>
+                            </a>
+                        </article>
+                    </div>
+                    <% } %>
+            </section>
+
+        </main>
+        <%-include('./partials/footer')%>
+</body>
+
+</html>
