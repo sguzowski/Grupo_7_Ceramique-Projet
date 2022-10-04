@@ -10,8 +10,18 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 
 //CON ESTA LINEA LE DIGO A EXPRESS QUE USO EJS
 app.set("view engine","ejs"); 
-app.use(session({secret:"secreto"})); //CONFIGURO SESIONES
+ //CONFIGURO SESIONES
+app.use(session({
+    secret: "Es un secreto",
+    resave: false,
+    saveUninitialized: false,
+}));
+
 app.use(bodyparser.urlencoded({ extended: false }));
+
+//app.use(userLoggedMiddleware);
+//const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
 
 
 // LEVANTO EL SERVIDOR 

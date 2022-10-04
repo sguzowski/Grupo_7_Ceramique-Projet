@@ -10,7 +10,12 @@
             </div>
             <div class="divcuenta">
                 <a href="/login"><img src="/design/cuenta.png" alt="micuenta"></a>
-                <p><%= locals.loguin?.nombre ? locals.loguin?.nombre :'Mi Cuenta' %></p>
+                <%if(locals.isLogued){%>
+                    <p><%=locals.usuarioLogueado.nombre%></p>
+                    <%}else{%>
+                        <p>Mi Cuenta</p>
+                    <%}%>
+               <!-- <p><%= locals.usuario?.nombre ? locals.usuario.nombre :'Mi Cuenta' %></p>-->
             </div>
             <div class="divcarro">
                 <a href="/products/carro"><img src="/design/compras.png" alt="carrito"></a>

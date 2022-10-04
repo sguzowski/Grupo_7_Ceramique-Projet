@@ -18,7 +18,7 @@ const bcrypt= require ("bcrypt");
 let controller = {
     index: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        res.render("index", {productos:productos,loguin:req.session.usuarioLogueado});
+        res.render("index", {productos:productos});
         //const productsVisited = products.filter((p) => p.category == "visited");
         //const productsInSale = products.filter((p) => p.category == "in-sale");
         },
@@ -59,9 +59,12 @@ let controller = {
             return res.render("login",{error:error});
            
         }
+        console.log(usuarioLogueado);
         req.session.usuarioLogueado = usuarioLogueado;
-
-        res.redirect("/");
+        res.locals.usuarioLogueado = req.session.usuarioLogueado;
+        res.locals.isLogued =true;
+      
+        return res.redirect("/");
 
         }else{
         res.render("login",{errores:errores.mapped()});
