@@ -9,13 +9,15 @@
                 </form>
             </div>
             <div class="divcuenta">
-                <a href="/login"><img src="/design/cuenta.png" alt="micuenta"></a>
-                <%if(locals.isLogued){%>
+                <% if (locals.isLogged==true){ %>
+                    <a href="/login"><img class="imagenPerfil" src="/images/users/<%=locals.usuarioLogueado.image%>"></a>
                     <p><%=locals.usuarioLogueado.nombre%></p>
-                    <%}else{%>
+                   
+                <% }else{ %>
+                    <a href="/login"> <img src="/bancoimagenes/cuenta.png" alt="micuenta"></a>
                         <p>Mi Cuenta</p>
                     <%}%>
-               <!-- <p><%= locals.usuario?.nombre ? locals.usuario.nombre :'Mi Cuenta' %></p>-->
+                    
             </div>
             <div class="divcarro">
                 <a href="/products/carro"><img src="/design/compras.png" alt="carrito"></a>
@@ -25,6 +27,7 @@
         <div class="divnav">
             <nav>
                 <ul class="nav_links">
+                    <li><a href="/user/salir">Salir</a></li>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/products/lista">Productos</a></li>
                     <li><a href="/products/crear">Crear</a></li>

@@ -5,7 +5,7 @@ const path = require('path'); // USO EL METODO PATH PARA LAS DIRECCIONES
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const session = require ("express-session"); // REQUIERO SESSION PARA TRABAJAR CON LA LIBRERIA
 const bodyparser = require("body-parser");
-
+const userLogin = require('./middlewares/userLogin');
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 //CON ESTA LINEA LE DIGO A EXPRESS QUE USO EJS
@@ -16,13 +16,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
-
+app.use(userLogin);
 app.use(bodyparser.urlencoded({ extended: false }));
-
-//app.use(userLoggedMiddleware);
-//const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-
-
 
 // LEVANTO EL SERVIDOR 
 app.listen(3003, ()=>{

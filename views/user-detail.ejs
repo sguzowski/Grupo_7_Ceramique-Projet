@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%-include('./partials/head')%>
+        <link rel="stylesheet" href="../css/styleHeader.css">
+        <link rel="stylesheet" href="../css/stylesUserDetail.css">
+        <title>Detalle de usuario</title>
+    </head>
+<body>
+<%-include('./partials/header')%>
+<main>
+
+                <div class="fotos">
+                        <div><img src="images/users/<%=locals.usuarioLogueado?.image %>" alt="Vela" class="principal"></div>
+                </div>
+                <div class="descripcion">
+                    <h3 class="titulo1">Nombre: <%=locals.usuarioLogueado?.nombre %></h3>
+                    <h3 class="titulo1">Usuario: <%=locals.usuarioLogueado?.usuario%></h3>
+                    <h3 class="titulo1">Email: <%=locals.usuarioLogueado?.email%></h3>
+                    <h3 class="titulo1">Edad: <%=locals.usuarioLogueado?.edad %></h3>
+                    <h3 class="titulo1">Teléfono: <%=locals.usuarioLogueado?.telefono %></h3>
+        
+                    </div>
+                </div>
+                
+        </main> 
+<%-include('./partials/footer')%>  

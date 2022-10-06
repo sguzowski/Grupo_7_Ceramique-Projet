@@ -28,8 +28,8 @@ header {
     display: inline-block;
     text-align: center;
     align-self: center;
-    height: 4vw;
-    width: 4vw;
+    height: 6vw;
+    width: 5vw;
     margin:0.5vw;
 }
 .divcuenta img{
@@ -46,8 +46,8 @@ header {
     display: inline-block;
     text-align: center;
     align-self: center;
-    height: 4vw;
-    width: 4vw;
+    height: 6vw;
+    width: 5vw;
     margin:1vw;
 }
 .divcarro img{
@@ -110,4 +110,7 @@ header {
 .nav_links li:hover{
     background-color: rgb(231, 150, 164);
     border: solid 3px rgb(231, 150, 164);
+}
+.imagenPerfil{
+    object-fit: cover;
 }

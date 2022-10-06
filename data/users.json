@@ -90,52 +90,32 @@
   "image": "16648130812911662431046323velo-euca.jpg"
  },
  {
-  "id": 1664813393861,
-  "nombre": "domingo",
-  "usuario": "jperon",
-  "password": "$2b$10$D1SXdnAhAFplS9OwOuqcmekwUNwyD/thl59SJ3W50OR4TklDIKDfq",
-  "email": "maury_raschi@hotmail.com",
-  "edad": "55",
-  "telefono": "123456",
-  "image": "16648133938281662431046323velo-euca.jpg"
- },
- {
-  "id": 1664814393717,
-  "nombre": "JORGE",
-  "usuario": "MRAS",
-  "password": "$2b$10$OazyAAP52/NQ4kt1XSXppOpuFu/yW0Zv1PaKHDfTaoKkPxOD1.yEm",
-  "email": "maury_raschi@hotmail.com",
-  "edad": "25",
-  "telefono": "12345",
-  "image": "user-vacio.jpg"
- },
- {
-  "id": 1664817867328,
-  "nombre": "Mauricio Angel",
-  "usuario": "mraschi",
-  "password": "$2b$10$JnUaU7jVV5pUWIUPj/pes.J.GsHNqqCxnOxuJOplc3KpX9i1J/gE2",
-  "email": "maury_raschi@hotmail.com",
-  "edad": "25",
-  "telefono": "12345",
-  "image": "16648178672901662431046323velo-euca.jpg"
- },
- {
-  "id": 1664821490002,
-  "nombre": "carlos",
-  "usuario": "locura",
-  "password": "$2b$10$ifnDfxM3GXBrXaJpRGN1VeU/bcZyoCasMiZA3MzJ2X62CvgYuFQFW",
-  "email": "juancho@arcor.com",
-  "edad": "28",
-  "telefono": "123456",
-  "image": "user-vacio.jpg"
- },
- {
-  "id": 1664827650763,
-  "nombre": "locura",
+  "id": 1665013306420,
+  "nombre": "Mauricio Raschi",
   "usuario": "mauryras",
-  "password": "$2b$10$BW2o3x/WB.e9.V8u1UXjm.BDHbWCv./J1FDfKrjOIS1ymuKv0JLtG",
-  "email": "ludmiladuran96@gmail.com",
-  "edad": "25",
+  "password": "$2a$10$Vf6.J78ix0iXQZD751iEo.9ydaEYscRpyyzTPLbb0/MkHJS5dMFIO",
+  "email": "maury_raschi@hotmail.com",
+  "edad": "34",
+  "telefono": "123456",
+  "image": "16650133063871662431046323velo-euca.jpg"
+ },
+ {
+  "id": 1665014819519,
+  "nombre": "Seba gato",
+  "usuario": "mgato",
+  "password": "$2a$10$GIbr8N0zZzDJogEuZQtohe1XNDajsfy0yay4mdW9qjLf7J953EnGW",
+  "email": "gato@gmail.com",
+  "edad": "26",
+  "telefono": "123456",
+  "image": "16650148195001662431046323velo-euca.jpg"
+ },
+ {
+  "id": 1665015063523,
+  "nombre": "pepe",
+  "usuario": "pepe12",
+  "password": "$2a$10$3z/F400V/SKwoSnNZJfkgOuashlxUdQ2C6il8IUn3Q3131K1CPXpu",
+  "email": "seba@arcor.com",
+  "edad": "24",
   "telefono": "123456",
   "image": "user-vacio.jpg"
  }

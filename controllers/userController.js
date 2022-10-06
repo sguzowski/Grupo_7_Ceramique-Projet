@@ -12,7 +12,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 //LLAMO AL OBJETO DE ERRORES DE VALIDACIONES
 const { validationResult } = require("express-validator");
 //LLAMO A LA LIBRERIA PARA ENCRIPTAR CONTRASEÑAS
-const bcrypt= require ("bcrypt");
+const bcrypt = require('bcryptjs');
 
 
 let controller = {
@@ -22,10 +22,17 @@ let controller = {
         //const productsVisited = products.filter((p) => p.category == "visited");
         //const productsInSale = products.filter((p) => p.category == "in-sale");
         },
+        
     listarUsuarios: function(req,res){
-        /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
-        const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        res.render("listaUsuarios",{usuarios:usuarios,loguin:req.session.usuarioLogueado});
+        let admin ="mauryras";
+        if(req.session.usuarioLogueado.usuario===admin){
+
+            /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
+            const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+            res.render("listaUsuarios",{usuarios:usuarios});
+        }else{
+            res.redirect("/");
+        }
          },
 
     login: function(req,res){
@@ -34,38 +41,32 @@ let controller = {
     logueate: function(req,res){
         let errores = validationResult(req);
         let usuarioLogueado;
-        console.log(req.body.usuario);
-        console.log(req.body.password);
+      
         //onsole.log(errores.errors);
-        
         if(errores.isEmpty()){
         const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        for(let i=0; i<usuarios.length; i++ ){
-            if(usuarios[i].usuario ==req.body.usuario)
-            {
-                if(bcrypt.compareSync("req.body.password",usuarios[i].password))
+        let userToLogin = usuarios.find( u => u.usuario === req.body.usuario);
+        if(userToLogin){
+            console.log(userToLogin.password);
+            console.log(req.body.password);
+            let password = bcrypt.compareSync(req.body.password,userToLogin.password);
+            console.log(password);
+                if(password==true)
                 {
-                    usuarioLogueado = usuarios[i];
+                    usuarioLogueado = userToLogin;
                     console.log("ENCONTRE EL USUARIO");
-                    break;
                 }
                                     
             }
 
-        }
         if(usuarioLogueado==undefined){
             let error ="Usuario no registrado o contraseña incorrecta";
             console.log("NO ENCONTRE EL USUARIO");
-            return res.render("login",{error:error});
-           
+            return res.render("login",{error:error}); 
         }
-        console.log(usuarioLogueado);
         req.session.usuarioLogueado = usuarioLogueado;
-        res.locals.usuarioLogueado = req.session.usuarioLogueado;
-        res.locals.isLogued =true;
-      
+        console.log(req.session.usuarioLogueado);
         return res.redirect("/");
-
         }else{
         res.render("login",{errores:errores.mapped()});
         }
@@ -83,12 +84,11 @@ let controller = {
         let repetido = usuarios.find((u) => u.usuario == req.body.usuario);
         if(repetido==undefined && errores.errors.length==0){
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
-        let salt = bcrypt.genSaltSync(10);
         const usuarioNuevo = {
         id: Date.now(),
         nombre: req.body.nombre,
         usuario: req.body.usuario,
-        password: bcrypt.hashSync("req.body.password",salt),
+        password: bcrypt.hashSync(req.body.password,10),
         email: req.body.email,
         edad: req.body.edad,
         telefono: req.body.telefono,
@@ -104,7 +104,7 @@ let controller = {
         usuarios.push(usuarioNuevo);
         const data = JSON.stringify(usuarios, null, " ");
         fs.writeFileSync(usersFilePath, data);
-        res.render("listaUsuarios",{usuarios:usuarios});
+        res.redirect("/login");
       
         }else{
             if(repetido!=undefined){
@@ -119,13 +119,23 @@ let controller = {
         },
 
     contactos: function(req,res){
-        res.render("contacto",{loguin:req.session.usuarioLogueado});
+        res.render("contacto");
         },
 
     nosotros: function(req,res){
-         res.render("nosotros",{loguin:req.session.usuarioLogueado});
-        }
+         res.render("nosotros");
+        },
+    salir: function(req,res){
+        //res.clearCookie('userEmail'); //elimino cookie
+		req.session.destroy(); // elimino sesión
+		res.redirect('/');
+           },
+    usuarioDetalle: function(req,res){
+        res.render("user-detail",{usuarioLogueado:req.session.usuarioLogueado});
+
+    }
     
 }
 
 module.exports=controller;
+
