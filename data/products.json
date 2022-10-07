@@ -24,19 +24,19 @@
  {
   "id": 3,
   "name": "VELÓN MIEL",
-  "price": 2000,
-  "discount": 0,
+  "price": "3000",
+  "discount": "10",
   "category": "velones",
   "description": "No producen agentes contaminantes, y al encenderlas desprenden un ligero y agradable aroma a miel, siendo apta para personas alérgicas o asmáticas, ya que la cera contiene propiedades antibacterianas que contribuyen a mantener la casa limpia y desinfectada.",
   "image": "vela-miel.jpg",
-  "stock": 10,
+  "stock": "10",
   "marca": "adidas"
  },
  {
   "id": 4,
   "name": "VELÓN LAVANDA",
-  "price": "2200",
-  "discount": "0",
+  "price": "3000",
+  "discount": "10",
   "category": "velones",
   "description": "romatiza tus espacios y genera una atmósfera de relajación con esta vela de lavanda y palo santo que ayuda a liberar la tensión emocional y alcanzar un estado de calma, serenidad y relajación mental. Es ideal para disfrutar antes de ir a dormir o en momentos de estrés, ansiedad, preocupación y negatividad.",
   "image": "16625186045231662518204831vela-color.jpg",
@@ -119,5 +119,16 @@
   "image": "user-vacio.jpg",
   "stock": "50",
   "marca": "LOCO"
+ },
+ {
+  "id": 1665105062599,
+  "name": "SANGRIENTO",
+  "price": "2000",
+  "discount": "25",
+  "category": "otra",
+  "description": "La mejor vela mota",
+  "image": "16651050623671662431046323velo-euca.jpg",
+  "stock": "20",
+  "marca": "CARTOCOR2"
  }
 ]

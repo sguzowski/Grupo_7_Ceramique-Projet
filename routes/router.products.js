@@ -23,8 +23,7 @@ const productController = require("../controllers/productController");
 //LLAMO A LAS VALIDACIONES DE PRODUCTOS
 const validacionesProducto = require("../middlewares/productValidation");
 
-const { application } = require("express");
-
+//const { application } = require("express");
 /*** MUESTRA CARRO DE COMPRAS - AUN SIN FUNCIONES ***/
 router.get("/carro",productController.carro);
 
@@ -36,8 +35,8 @@ router.get("/product-detail/editar/:id",authMiddleware,productController.editar)
 router.put("/editar/:id",upload.single("image"),productController.actualizar);
 
   /*** CREAR UN PRODUCTO ***/
-  router.get("/crear",authMiddleware,productController.crear);
-  router.post("/crear",upload.single("image"),productController.guardar);
+router.get("/crear",authMiddleware,productController.crear);
+router.post("/crear",upload.single("image"),productController.guardar);
 
 /*** BORRA UN PRODUCTO ***/
 router.delete("/borrar/:id",authMiddleware,productController.borrar);

@@ -39,7 +39,6 @@ let controller = {
         },
     guardar: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
         const productoNuevo = {
         id: Date.now(),
@@ -48,7 +47,7 @@ let controller = {
         discount: req.body.discount,
         category: req.body.category,
         description: req.body.description,
-        image: "user-vacio.jpg",
+        image:"user-vacio.jpg",
         stock: req.body.stock,
         marca: req.body.marca,
         };
@@ -63,8 +62,8 @@ let controller = {
         const data = JSON.stringify(productos, null, " ");
         fs.writeFileSync(productsFilePath, data);
         res.redirect("/");
-
         },
+
     actualizar: function(req,res){
         /*LEO EL ARCHIVO DE PRODUCTOS*/
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -81,7 +80,7 @@ let controller = {
             p.marca =req.body.marca;
 
         /*VEO SI HAY ARCHIVO Y CAMBIO NOMBRE DE IMAGEN GUARDADA*/
-        if (req.file && req.body.image !="user-vacio.jpg") {
+        if (req.file) {
             fs.unlinkSync("./public/bancoimagenes/" + p.image);
             p.image = req.file.filename;
             }

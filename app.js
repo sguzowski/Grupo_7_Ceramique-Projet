@@ -18,6 +18,7 @@ app.use(session({
 }));
 app.use(userLogin);
 app.use(bodyparser.urlencoded({ extended: false }));
+//app.use(express.urlencoded({ extended: false }));
 
 // LEVANTO EL SERVIDOR 
 app.listen(3003, ()=>{

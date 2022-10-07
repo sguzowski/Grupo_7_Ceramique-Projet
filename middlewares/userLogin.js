@@ -18,7 +18,7 @@
         res.locals.isLogged = true;
         res.locals.usuarioLogueado = req.session.usuarioLogueado;
         console.log("ENTRE A LOGUEADO!!!!!!!!!")
-        next();
+        
     }
     next();
    
