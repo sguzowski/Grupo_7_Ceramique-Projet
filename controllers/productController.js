@@ -4,6 +4,8 @@ const path = require("path");
 const { CLIENT_RENEG_LIMIT } = require("tls");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 
+const db = require('../database/models');
+
 const { validationResult } = require("express-validator"); //LLAMO AL OBJETO DE ERRORES DE VALIDACIONES
 
 let controller = {
@@ -31,12 +33,34 @@ let controller = {
         const producto = productos.find((p) => p.id == req.params.id);
         res.render("editar", {producto: producto});
         },
-    lista: function(req,res){
+
+        
+    // lista: function(req,res){
 
         /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        res.render("lista", {productos:productos}); 
-        },
+       // const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+     //   res.render("lista", {productos:productos}); 
+      //  },
+
+    
+    lista: async (req, res) => {
+            try {
+              const productos = await db.Producto.findAll();
+            // res.send (productos)
+              res.render("lista",  {productos:productos});
+            
+
+            } catch (error) {
+              console.log({ error });
+            }
+            
+           //// db.Producto.findAll()
+            //.then(productos =>{
+            //    res.render("lista", {productos:productos}); 
+           // })
+    },
+
+
     guardar: function(req,res){
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
