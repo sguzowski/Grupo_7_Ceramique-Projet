@@ -25,56 +25,74 @@ let controller = {
             .then(productos =>{
             res.render("index", {productos:productos}); 
             })
-      
+            
         //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         //res.render("index", {productos:productos});
         //const productsVisited = products.filter((p) => p.category == "visited");
         //const productsInSale = products.filter((p) => p.category == "in-sale");
         },
         
-    listarUsuarios: function(req,res){
+    listarUsuarios: async function(req,res){
         let admin ="mauryras";
         if(req.session.usuarioLogueado.usuario===admin){
             /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
             //const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-            res.render("listaUsuarios",{usuarios:usuarios});
+            try {
+                const usuarios = await db.Usuario.findAll();
+                res.render("listaUsuarios",{usuarios:usuarios});
+                
+            } catch (error) {
+                res.redirect("/");
+            }
         }else{
-            res.redirect("/");
+                res.redirect("/");
         }
          },
 
     login: function(req,res){
         res.render("login");
          },
-    logueate: function(req,res){
+    logueate: async function(req,res){
         let errores = validationResult(req);
         let usuarioLogueado;
       
-        //onsole.log(errores.errors);
         if(errores.isEmpty()){
-        const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        let userToLogin = usuarios.find( u => u.usuario === req.body.usuario);
-        if(userToLogin){
-            console.log(userToLogin.password);
-            console.log(req.body.password);
-            let password = bcrypt.compareSync(req.body.password,userToLogin.password);
-            console.log(password);
-                if(password==true)
-                {
-                    usuarioLogueado = userToLogin;
-                    console.log("ENCONTRE EL USUARIO");
+        try {
+            //const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+            //let userToLogin = usuarios.find( u => u.usuario === req.body.usuario);
+            //console.log(req.body.usuario);
+            const userToLogin = await db.Usuario.findOne({
+                where: {
+                    usuario: req.body.usuario,
                 }
-                                    
+            })
+            //console.log(userToLogin.password);
+            //console.log("***********" + userToLogin + "**************");
+            if(userToLogin){
+                console.log(userToLogin.password);
+                console.log(req.body.password);
+                let password = bcrypt.compareSync(req.body.password,userToLogin.password);
+                console.log(password);
+                    if(password==true)
+                    {
+                        usuarioLogueado = userToLogin;
+                        console.log("ENCONTRE EL USUARIO");
+                    }
+                                        
+                }
+    
+            if(usuarioLogueado==undefined){
+                let error ="Usuario no registrado o contraseña incorrecta";
+                console.log("NO ENCONTRE EL USUARIO");
+                return res.render("login",{error:error}); 
             }
-
-        if(usuarioLogueado==undefined){
-            let error ="Usuario no registrado o contraseña incorrecta";
-            console.log("NO ENCONTRE EL USUARIO");
-            return res.render("login",{error:error}); 
+            req.session.usuarioLogueado = usuarioLogueado;
+            console.log(req.session.usuarioLogueado);
+            return res.redirect("/");
+          
+        } catch (error) {
+            res.render("login");
         }
-        req.session.usuarioLogueado = usuarioLogueado;
-        console.log(req.session.usuarioLogueado);
-        return res.redirect("/");
         }else{
         res.render("login",{errores:errores.mapped()});
         }
@@ -84,12 +102,20 @@ let controller = {
         res.render("register");
         },
 
-    nuevo: function(req,res){
+    nuevo: async function(req,res){
         let errores = validationResult(req);
-        const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        console.log(errores);
+        try {
+            const repetido = await db.Usuario.findOne({
+                where: {
+                    usuario: req.body.usuario,
+                }
+            })
+
+        //const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+        //console.log(errores);
+
         /* CONSULTO SI EL USUARIO EXISTE  Y SI EXISTE NO LO GUARDO - SI HAY ERRORES NO GUARDO NADA*/
-        let repetido = usuarios.find((u) => u.usuario == req.body.usuario);
+        //let repetido = usuarios.find((u) => u.usuario == req.body.usuario);
         if(repetido==undefined && errores.errors.length==0){
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
         const usuarioNuevo = {
@@ -109,10 +135,16 @@ let controller = {
           }
           
         /*SUMO EL ARCHIVO A PRODUCTOS Y ESCRIBO DE NUEVO EL JSON*/
-        usuarios.push(usuarioNuevo);
-        const data = JSON.stringify(usuarios, null, " ");
-        fs.writeFileSync(usersFilePath, data);
-        res.redirect("/login");
+        //usuarios.push(usuarioNuevo);
+    
+            db.Usuario.create (usuarioNuevo)
+            .then (usuarioNuevo =>{
+                res.redirect("/login");
+            })
+
+        //const data = JSON.stringify(usuarios, null, " ");
+        //fs.writeFileSync(usersFilePath, data);
+        //res.redirect("/login");
       
         }else{
             if(repetido!=undefined){
@@ -124,6 +156,9 @@ let controller = {
             res.render("register",{errores:errores, old:old})
             }
         }
+    }catch{
+        res.redirect("/");
+    }
         },
 
     contactos: function(req,res){
