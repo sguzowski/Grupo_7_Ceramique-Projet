@@ -128,5 +128,15 @@
   "edad": "25",
   "telefono": "123456",
   "image": "user-vacio.jpg"
+ },
+ {
+  "id": 1665105780859,
+  "nombre": "sebacat",
+  "usuario": "sebacat",
+  "password": "$2a$10$bYOK0nIfz9Q3ViPN31E2lulAQhvNhMHfWYwt.U3glh3XvveSpSsne",
+  "email": "sebacat@gmail.com",
+  "edad": "27",
+  "telefono": "123456",
+  "image": "1665105780822tortuga.png"
  }
 ]

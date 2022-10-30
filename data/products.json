@@ -130,5 +130,16 @@
   "image": "16651050623671662431046323velo-euca.jpg",
   "stock": "20",
   "marca": "CARTOCOR2"
+ },
+ {
+  "id": 1665105805855,
+  "name": "Vela Hoja Tronco",
+  "price": "2341234",
+  "discount": "43",
+  "category": "velas",
+  "description": "Vela de soja con anis y naranja",
+  "image": "166510580583339e3176e174efc73ece816512c9c1d0ba5231c1d98c25a1a345bfe05d255512f.jpg",
+  "stock": "11",
+  "marca": "Ceramique"
  }
 ]
