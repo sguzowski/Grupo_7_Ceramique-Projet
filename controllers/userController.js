@@ -13,12 +13,21 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const { validationResult } = require("express-validator");
 //LLAMO A LA LIBRERIA PARA ENCRIPTAR CONTRASEÑAS
 const bcrypt = require('bcryptjs');
+// sequelize
+const db = require('../database/models');
+
 
 
 let controller = {
+
     index: function(req,res){
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        res.render("index", {productos:productos});
+         db.Producto.findAll()
+            .then(productos =>{
+            res.render("index", {productos:productos}); 
+            })
+      
+        //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        //res.render("index", {productos:productos});
         //const productsVisited = products.filter((p) => p.category == "visited");
         //const productsInSale = products.filter((p) => p.category == "in-sale");
         },
@@ -26,9 +35,8 @@ let controller = {
     listarUsuarios: function(req,res){
         let admin ="mauryras";
         if(req.session.usuarioLogueado.usuario===admin){
-
             /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
-            const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+            //const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
             res.render("listaUsuarios",{usuarios:usuarios});
         }else{
             res.redirect("/");
