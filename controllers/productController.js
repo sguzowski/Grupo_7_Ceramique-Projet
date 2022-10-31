@@ -25,11 +25,6 @@ let controller = {
 
         },  
 
-
-
-
-
-
     carro: function(req,res){
         res.render("carro");
          },
@@ -40,18 +35,42 @@ let controller = {
          },
 
 
-    editar: function(req,res){
+    editar: async function(req,res){
+      let producto;
+      let marca;
+      let categoria;
         /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE EDITAR DE PRODUCTOS*/
         //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
         //const producto = productos.find((p) => p.id == req.params.id);
         //res.render("editar", {producto: producto});
+      try{
+         producto = await db.Producto.findByPk(req.params.id); //milagro anda esto
+       }catch{
+        console.log(error)
+      }
+      try {
+       marca = await db.Marca.findByPk(producto.marcaId);
+        console.log(marca);
+        
+      } catch (error) {
+        console.log(error)
+      }
+      try {
+         categoria = await db.Categoria.findByPk(producto.categoriaId);
+        console.log(categoria);
+        
+      } catch (error) {
+        console.log(error)
+      }
 
-        db.Producto.findByPk(req.params.id) //milagro anda esto
-        .then(producto => {
-            let productos = {producto}
-            res.render("editar", { producto: producto});
-        });
+      producto.marcaId = marca.nombre
+      producto.categoriaId = categoria.nombre
+        //console.log(producto);
+      res.render("editar", { producto: producto});
+      
+
         },
+       
 
         
     // lista: function(req,res){
@@ -85,7 +104,6 @@ let controller = {
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
         try{
                         
-
         const productoNuevo = 
         {
         name: req.body.name,
@@ -94,7 +112,8 @@ let controller = {
         description: req.body.description,
         image:"user-vacio.jpg",
         stock: req.body.stock,
-        marca: req.body.marca
+        marca: req.body.marca,
+        category: req.body.category
         };
      /*PREGUNTO SI ME VINO EL ARCHIVO DE IMAGEN*/
         if (req.file) {
@@ -104,7 +123,7 @@ let controller = {
             .then (productoNuevo =>{
                 res.redirect("/");
             })
-          
+
         /*SUMO EL ARCHIVO A PRODUCTOS Y ESCRIBO DE NUEVO EL JSON*/
         //productos.push(productoNuevo);
        // const data = JSON.stringify(productos, null, " ");
@@ -114,8 +133,6 @@ let controller = {
         catch (error) {
             console.log(error);
           }
-          
-          
 
         },
 
