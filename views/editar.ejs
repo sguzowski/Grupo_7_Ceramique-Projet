@@ -31,16 +31,16 @@
             <div>
                 <label class="texto">Categoría del producto:</label>
             <select name="category" class="opciones">
-                <option value="velas"<%= (producto.categoriaId == "velas")? "selected":"" %>>Velas</option>
-                <option value="velones"<%= (producto.categoriaId == "velones")? "selected":"" %>>Velones</option>
-                <option value="accesorios"<%= (producto.categoriaId == "accesorios")? "selected":"" %>>Accesorios</option>
-                <option value="otra"<%= (producto.categoriaId == "otra")? "selected":"" %>>Otra</option>
+                <option value="velas"<%= (producto.categorias.nombre == "velas")? "selected":"" %>>Velas</option>
+                <option value="velones"<%= (producto.categorias.nombre == "velones")? "selected":"" %>>Velones</option>
+                <option value="accesorios"<%= (producto.categorias.nombre == "accesorios")? "selected":"" %>>Accesorios</option>
+                <option value="otra"<%= (producto.categorias.nombre == "otra")? "selected":"" %>>Otra</option>
             </select>
             </div><br>
 
             <div>
                 <label class="texto" for="marca">Marca:</label>
-                <input type="text" name="marca" value="<%= producto.marcaId %>" id="marca">
+                <input type="text" name="marca" value="<%= producto.marcas.nombre %>" id="marca">
             </div>
 
             <div>

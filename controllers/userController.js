@@ -104,7 +104,7 @@ let controller = {
 
     nuevo: async function(req,res){
         let errores = validationResult(req);
-        try {
+        //try {
             const repetido = await db.Usuario.findOne({
                 where: {
                     usuario: req.body.usuario,
@@ -116,10 +116,12 @@ let controller = {
 
         /* CONSULTO SI EL USUARIO EXISTE  Y SI EXISTE NO LO GUARDO - SI HAY ERRORES NO GUARDO NADA*/
         //let repetido = usuarios.find((u) => u.usuario == req.body.usuario);
-        if(repetido==undefined && errores.errors.length==0){
+        console.log ("*** repetido ***", repetido)
+        console.log ("---- lenght ----", errores.errors.length)
+       if(repetido==undefined && errores.errors.length==0){
+        
         /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
         const usuarioNuevo = {
-        id: Date.now(),
         nombre: req.body.nombre,
         usuario: req.body.usuario,
         password: bcrypt.hashSync(req.body.password,10),
@@ -140,26 +142,28 @@ let controller = {
             db.Usuario.create (usuarioNuevo)
             .then (usuarioNuevo =>{
                 res.redirect("/login");
+            }).catch (error => {
+                res.redirect ("/")            
             })
+        }
+    },
 
         //const data = JSON.stringify(usuarios, null, " ");
         //fs.writeFileSync(usersFilePath, data);
         //res.redirect("/login");
       
-        }else{
-            if(repetido!=undefined){
-            let msgRepetido = "Error: Nombre de usuario repetido!!!! Escriba otro usuario para registrarse"
-            res.render("register",{msgRepetido:msgRepetido});
-            }else{
-            errores = errores.mapped();
-            let old =req.body;
-            res.render("register",{errores:errores, old:old})
-            }
-        }
-    }catch{
-        res.redirect("/");
-    }
-        },
+       // }else{
+        //    if(repetido!=undefined){
+       //     let msgRepetido = "Error: Nombre de usuario repetido!!!! Escriba otro usuario para registrarse"
+        //    res.render("register",{msgRepetido:msgRepetido});
+         //   }else{
+         //   errores = errores.mapped();
+         //   let old =req.body;
+         //   res.render("register",{errores:errores, old:old})
+        //    }
+       // }
+    
+    
 
     contactos: function(req,res){
         res.render("contacto");
