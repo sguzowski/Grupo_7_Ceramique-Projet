@@ -10,6 +10,16 @@
 <body>
 <%-include('./partials/header')%>
 <main>
+    
+    <% if(locals.errores){%>
+        <ol class="errores">
+        <% for(const error in locals.errores ){ %>
+        <li><%= errores[error].msg%></li>
+        <% } %>
+        </ol>
+        <%}%>
+        <ol class="errores"><%=locals.error%></ol>
+
         <h3>Crear un nuevo producto</h3>
         <form action="/products/crear" method="POST" enctype="multipart/form-data">
             <div>
@@ -29,10 +39,11 @@
             </div>
             <div>
                 <select name="category" class="opciones">
-                    <option value="velas">Velas</option>
-                    <option value="velones">Velones</option>
-                    <option value="accesorios">Accesorios</option>
-                    <option value="otra">Otra</option>
+                    // mirar! como mostrar con base de datos
+                    <option value=1>Velas</option>
+                    <option value=2>Velones</option>
+                    <option value=3>Accesorios</option>
+                    <option value=4>Otra</option>
                 </select>
             </div><br>
 

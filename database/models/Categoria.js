@@ -1,5 +1,3 @@
-const Marca = require("./Marca");
-
 module.exports = (sequelize, dataTypes) => {
     
     let alias = 'Categoria';

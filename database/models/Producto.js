@@ -35,8 +35,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        marcaId:{
-            type: dataTypes.INTEGER,
+        marca:{
+            type: dataTypes.STRING(100),
         }
     }
     let config = {
@@ -47,10 +47,10 @@ module.exports = (sequelize, dataTypes) => {
 
 
     Producto.associate = function (models) {
-        Producto.belongsTo(models.Marca, { 
+        /*Producto.belongsTo(models.Marca, { 
             as: "marcas",
             foreignKey: "marcaId"
-        })
+        })*/
 
         Producto.belongsTo(models.Categoria, { 
             as: "categorias",

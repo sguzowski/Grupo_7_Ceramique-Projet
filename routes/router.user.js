@@ -33,7 +33,7 @@ router.post("/login",loginValidations,userController.logueate);
 
 /*** CREAR UN USUARIO ***/
 router.get("/register",isLoguedMiddleware,userController.register);
-router.post("/register",upload.single("image"),usuarioValidations,userController.nuevo);
+router.post("/register", upload.single("image"),usuarioValidations, userController.nuevo);
 
 router.get("/salir",userController.salir);
 router.get("/nosotros",userController.nosotros);

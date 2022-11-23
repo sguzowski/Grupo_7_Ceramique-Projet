@@ -32,13 +32,12 @@ let controller = {
   crear: function (req, res) {
     /*RENDERIZO LA VISTA DEL FORMULARIO DE CREAR*/
     res.render("crear");
+    
   },
 
 
   editar: async function (req, res) {
-    let producto;
-    let marca;
-    let categoria;
+   
     /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE EDITAR DE PRODUCTOS*/
     //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     //const producto = productos.find((p) => p.id == req.params.id);
@@ -50,11 +49,11 @@ let controller = {
       //console.log(marca);
      // categoria = await db.Categoria.findByPk(producto.categoriaId);
      // console.log(categoria);
-      producto = await db.Producto.findByPk(req.params.id, {
-        include: [{association: "marcas"},{association:"categorias"}]
+      let producto = await db.Producto.findByPk(req.params.id, {
+        include: [{association:"categorias"}]
        });
-       console.log ("PRODUCTO *******")
-       console.log (producto.marcas.nombre)
+       //console.log ("PRODUCTO *******")
+       //console.log (producto.marcas.nombre)
 
     } catch (error) {
       console.log(error)
@@ -96,40 +95,100 @@ let controller = {
   },
 
 
-  guardar: function (req, res) {
+  guardar: async function (req, res) {
     //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
-    try {
+//    try {
 
+/*const marca = db.Marca.findOne({
+  where: {
+   nombre: req.body.marca,
+  }})
+
+
+  let marcaId;
+
+  if (marca && marca.id){
+  
+       marcaId= marca.id;
+    } else{
+      console.log("*******PASA XC ACA********")
+      const objetoMarca = {
+        nombre: req.body.marca,
+        descripcion: "nada loco",
+     
+      }
+
+      console.log ("******* El objeto a CREAR *****",JSON.stringify (objetoMarca))
+      
+      db.Marca.create(objetoMarca).then ((productonuevo)=>{
+        let marcaNueva =  db.Marca.findOne({
+          where: {
+           nombre: productonuevo.nombre,
+          }})
+      }).catch (error => {
+        console.log(error);
+      });
+      l
+
+        console.log ("****** Marca NUEVA *****", JSON.stringify (marcaNueva))
+
+        marcaId = marcaNueva.id;
+      }
+
+    console.log ("******* El ID de la MARCA *******", marcaId)*/
+  
+//console.log (JSON.stringify ("Categoria****", categoria));
+//console.log (JSON.stringify ("EL BODY /**/*", req.body));
+let errores = validationResult(req)
+
+try {
+
+  if (errores.isEmpty()) {
       const productoNuevo =
       {
         name: req.body.name,
         price: req.body.price,
         discount: req.body.discount,
         description: req.body.description,
+        categoriaId: req.body.category,
         image: "user-vacio.jpg",
-        stock: req.body.stock,
         marca: req.body.marca,
-        category: req.body.category
+        stock: req.body.stock,
+               
       };
+      
       /*PREGUNTO SI ME VINO EL ARCHIVO DE IMAGEN*/
       if (req.file) {
         productoNuevo.image = req.file.filename;
-      };
-      db.Producto.create(productoNuevo)
+      };     
+
+
+      console.log ("************", productoNuevo)
+      await db.Producto.create(productoNuevo)
         .then(productoNuevo => {
           res.redirect("/");
         })
+      }
+      else {
+        const producto = await db.Producto.findAll()
+                res.render('crear', {
+                    errores: errores.mapped(),
+                    old: req.body,
+                    producto: producto
+                })
+                
+      }
 
       /*SUMO EL ARCHIVO A PRODUCTOS Y ESCRIBO DE NUEVO EL JSON*/
       //productos.push(productoNuevo);
       // const data = JSON.stringify(productos, null, " ");
       //fs.writeFileSync(productsFilePath, data);
 
-    }
-    catch (error) {
+    
+    }catch (error){
       console.log(error);
-    }
+    };
 
   },
 
