@@ -7,6 +7,11 @@ const session = require ("express-session"); // REQUIERO SESSION PARA TRABAJAR C
 const bodyparser = require("body-parser");
 const userLogin = require('./middlewares/userLogin');
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+const cors = require("cors");
+var corsOptions = {
+    origin: "*"
+  };
+  
 
 //CON ESTA LINEA LE DIGO A EXPRESS QUE USO EJS
 app.set("view engine","ejs"); 
@@ -16,6 +21,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+app.use(cors(corsOptions));
 app.use(userLogin);
 app.use(bodyparser.urlencoded({ extended: false }));
 //app.use(express.urlencoded({ extended: false }));
@@ -32,3 +38,15 @@ const productsRouter = require('./routes/router.products'); // Rutas products
 app.use('/',userRouter);
 app.use('/products', productsRouter);
 app.use('/user', userRouter);
+
+///RUTAS DE APIS
+
+//Aquí llamo a la ruta de las api de productos
+const apiProductRouter = require('./routes/api/apiProducts')
+//Aquí llamo a la ruta de las api de usuario
+//const apiUsersRouter = require('./routes/api/apiUsers')
+
+
+//Aquí creo la colección de mis recursos (APIs)
+app.use('/api/products',apiProductRouter);
+//app.use('/api/users',apiUsersRouter);
