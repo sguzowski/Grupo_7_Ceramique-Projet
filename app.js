@@ -44,9 +44,9 @@ app.use('/user', userRouter);
 //Aquí llamo a la ruta de las api de productos
 const apiProductRouter = require('./routes/api/apiProducts')
 //Aquí llamo a la ruta de las api de usuario
-//const apiUsersRouter = require('./routes/api/apiUsers')
+const apiUsersRouter = require('./routes/api/apiUsers')
 
 
 //Aquí creo la colección de mis recursos (APIs)
 app.use('/api/products',apiProductRouter);
-//app.use('/api/users',apiUsersRouter);
+app.use('/api/users',apiUsersRouter);
