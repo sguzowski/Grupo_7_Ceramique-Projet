@@ -2,7 +2,7 @@
 <html>
     <head>
         <%-include('./partials/head')%>
-      <link rel="stylesheet" href="../css/styleRegister.css"> 
+       <link rel="stylesheet" href="../css/styleRegister.css">
        <link rel="stylesheet" href="../css/styleHeader.css"> 
         <title>Register</title>
         </head>
@@ -11,7 +11,7 @@
 <%-include('./partials/header')%>
 <main>
     
-    <% if(locals.errores){%>
+        <% if(locals.errores){%>
         <ol class="errores">
         <% for(const error in locals.errores ){ %>
         <li><%= errores[error].msg%></li>
@@ -21,14 +21,17 @@
         <ol class="errores"><%=locals.error%></ol>
 
         <h3>Crea tu cuenta</h3>
-        <form action="/user/register" method="POST" enctype="multipart/form-data">
+        <!-- validacion front ver archivo js-->
+        <div class="listaerrores"><ul></ul></div>
+        <!-- validacion front ver archivo js-->
+        <form action="/user/register" method="POST" enctype="multipart/form-data" class="formregister">
             <div>
                 <label class="texto">Nombre Completo:</label>
-                <input type="text" name="nombre" placeholder="Ej. Juan Perez" value="<%= locals.old && old.nombre ? old.nombre :'' %>">
+                <input class="name" type="text" name="nombre" placeholder="Ej. Juan Perez" value="<%= locals.old && old.nombre ? old.nombre :'' %>">
             </div>
             <div>
                 <label class="texto">Nombre Usuario:</label>
-                <input type="text" name="usuario" placeholder="Ej. jperez" value="<%= locals.old && old.usuario ? old.usuario :'' %>">
+                <input class="usuario" type="text" name="usuario" placeholder="Ej. jperez" value="<%= locals.old && old.usuario ? old.usuario :'' %>">
                 <% if(locals.msgRepetido){ %>
                     <p class="error"><%= locals.msgRepetido %> </p>
                   <% } %>
@@ -36,26 +39,26 @@
 
             <div>
                 <label class="texto">Contraseña:</label>
-                <input type="password" name="password" placeholder ="Largo minimo 6 caracteres Ej:a12345">
+                <input class="password" type="password" name="password" placeholder ="Largo minimo 6 caracteres Ej:a12345">
             </div>
             <div>
                 <label class="texto">Confirmar Contraseña:</label>
-                <input type="password" name="password2" placeholder ="Largo minimo 6 caracteres Ej:a12345">
+                <input class="password2" type="password" name="password2" placeholder ="Largo minimo 6 caracteres Ej:a12345">
             </div>
 
             <div>
                 <label class="texto">Correo Electronico:</label>
-                <input type="email" name="email" placeholder="Ej. juan.perez@gmail.com" value="<%= locals.old && old.email ? old.email :'' %>">
+                <input class="email" type="email" name="email" placeholder="Ej. juan.perez@gmail.com" value="<%= locals.old && old.email ? old.email :'' %>">
             </div>
 
             <div>
                 <label class="texto">Edad:</label>
-                <input type="numer" name="edad" placeholder="Ej. 34" value="<%= locals.old && old.edad ? old.edad :'' %>">
+                <input class="edad" type="number" name="edad" placeholder="Ej. 34" value="<%= locals.old && old.edad ? old.edad :'' %>">
             </div>
 
             <div>
                 <label class="texto">Telefono:</label>
-                <input type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)" value="<%= locals.old && old.telefono ? old.telefono :'' %>">
+                <input class="telefono" type="tel" name="telefono" placeholder="Ej. 2644766607 (Cod área + Cel sin 15)" value="<%= locals.old && old.telefono ? old.telefono :'' %>">
             </div>
             <div>
                 <label class="texto">Imagen:</label>
@@ -69,6 +72,7 @@
         </form>
     </main>
 <%-include('./partials/footer')%>
+<script src="js/valiregistro.js"></script>
 </body>
 
 </html>

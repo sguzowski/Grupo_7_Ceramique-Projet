@@ -21,14 +21,15 @@
         <ol class="errores"><%=locals.error%></ol>
 
         <h3>Crear un nuevo producto</h3>
-        <form action="/products/crear" method="POST" enctype="multipart/form-data">
+        <div class="listaerrores"><ul></ul></div>
+        <form class="formcrear" action="/products/crear" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name"class="texto">Nombre del producto:</label>
-                <input type="text" id="name" name="name" placeholder="Ej. Velon Rojo">
+                <input class="name" type="text" id="name" name="name" placeholder="Ej. Velon Rojo">
             </div>
             <div>
                 <label class="texto" for="description">Descripción del producto:</label>
-                <input type="text" id="description" name="description" placeholder="Describa el producto aquí">
+                <input class="descripcion" type="text" id="description" name="description">
             </div>
 
             <div>
@@ -49,17 +50,17 @@
 
             <div>
                 <label class="texto" for="marca">Marca del producto:</label>
-                <input type="text" name="marca" id= "marca" placeholder="Ej. Cartocor">
+                <input class="marca" type="text" name="marca" id= "marca">
             </div>
 
             <div>
                 <label class="texto" for="stock">Stock de producto:</label>
-                <input type="number" name="stock" placeholder="10" id="stock">
+                <input type="number" name="stock" id="stock">
             </div>
 
             <div>
                 <label class="texto" for="price">Precio del producto:</label>
-                <input type="number" name="price" placeholder="Ej. 2000 (sin signo $)" id="price">
+                <input class="precio" type="number" name="price" placeholder="Ej. 2000 (sin signo $)" id="price">
             </div>
             
             <div>
@@ -71,6 +72,7 @@
         </form>
     </main>
 <%-include('./partials/footer')%>
+<script src="/js/valicrear.js"></script>
 </body>
 
 </html>
