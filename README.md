@@ -21,5 +21,9 @@ Proyecto en GITHUB.
 
 https://github.com/sguzowski/Grupo_7_Ceramique-Projet.git
 
+Proyecto de Front
+
+https://github.com/mauryras/front-end-react-cursoDH.git
+
 Planificación en Trelo:
 https://trello.com/grupo_7_ceramiqueprojet

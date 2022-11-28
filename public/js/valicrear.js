@@ -1,8 +1,7 @@
 window.addEventListener("load", function(){
     let formulario = document.querySelector("form.formcrear");
     formulario.addEventListener("submit", function(e){
-        e.preventDefault();
-        console.log("holaseba");
+      
         let errores = [];
 
         let campoNombre = document.querySelector("input.name");
