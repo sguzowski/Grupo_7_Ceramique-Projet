@@ -57,11 +57,18 @@ let controller = {
       let producto = await db.Producto.findByPk(req.params.id, {
         include: [{association:"categorias"}]
        });
+       //console.log ("PRODUCTO *******")
+       //console.log (producto.marcas.nombre)
 
     } catch (error) {
       console.log(error)
     }
+
+    //producto.marcaId = marca.nombre
+    //producto.categoriaId = categoria.nombre
+    //console.log(producto);
     res.render("editar", { producto: producto });
+
 
 
   },
