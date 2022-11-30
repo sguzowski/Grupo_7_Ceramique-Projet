@@ -54,7 +54,7 @@ let controller = {
        });
        //console.log ("PRODUCTO *******")
        //console.log (producto.marcas.nombre)
-
+       res.render("editar", { producto: producto });
     } catch (error) {
       console.log(error)
     }
@@ -62,7 +62,7 @@ let controller = {
     //producto.marcaId = marca.nombre
     //producto.categoriaId = categoria.nombre
     //console.log(producto);
-    res.render("editar", { producto: producto });
+    
 
 
   },
