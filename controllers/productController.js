@@ -42,26 +42,25 @@ let controller = {
     //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     //const producto = productos.find((p) => p.id == req.params.id);
     //res.render("editar", {producto: producto});
-    try {
-     // producto = await db.Producto.findByPk(req.params.id); //milagro anda esto
+    // producto = await db.Producto.findByPk(req.params.id); //milagro anda esto
 
-     // marca = await db.Marca.findByPk(producto.marcaId);
-      //console.log(marca);
-     // categoria = await db.Categoria.findByPk(producto.categoriaId);
-     // console.log(categoria);
+    // marca = await db.Marca.findByPk(producto.marcaId);
+     //console.log(marca);
+    // categoria = await db.Categoria.findByPk(producto.categoriaId);
+    // console.log(categoria);
+    //console.log ("PRODUCTO *******")
+    //console.log (producto.marcas.nombre)
+    //producto.marcaId = marca.nombre
+    //producto.categoriaId = categoria.nombre
+    //console.log(producto);
+    try {
       let producto = await db.Producto.findByPk(req.params.id, {
         include: [{association:"categorias"}]
        });
-       //console.log ("PRODUCTO *******")
-       //console.log (producto.marcas.nombre)
 
     } catch (error) {
       console.log(error)
     }
-
-    //producto.marcaId = marca.nombre
-    //producto.categoriaId = categoria.nombre
-    //console.log(producto);
     res.render("editar", { producto: producto });
 
 
