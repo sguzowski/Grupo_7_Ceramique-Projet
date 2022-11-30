@@ -27,13 +27,12 @@ const apiProductsController = {
             })
             
             Promise.all([productos, categorias,velas,velones,accesorios,otra])
-            return res.status(200).json({ 
+
+                return res.status(200).json({ 
                 total: productos.length,
                 data : productos, 
-                velas:velas.length,
-                velones: velones.length,
-                accesorios: accesorios.length,
-                otra: otra.length,
+                cantCategorias:{velas:velas.length,velones:velones.length,accesorios:accesorios.length,otra:otra.length,total:4},
+                categorias:categorias,
                 status:200,
                 url:'api/products'
             });
