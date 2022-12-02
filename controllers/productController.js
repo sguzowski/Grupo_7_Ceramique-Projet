@@ -39,49 +39,19 @@ let controller = {
   editar: async function (req, res) {
    
     /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE EDITAR DE PRODUCTOS*/
-    //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    //const producto = productos.find((p) => p.id == req.params.id);
-    //res.render("editar", {producto: producto});
-    // producto = await db.Producto.findByPk(req.params.id); //milagro anda esto
-
-    // marca = await db.Marca.findByPk(producto.marcaId);
-     //console.log(marca);
-    // categoria = await db.Categoria.findByPk(producto.categoriaId);
-    // console.log(categoria);
-    //console.log ("PRODUCTO *******")
-    //console.log (producto.marcas.nombre)
-    //producto.marcaId = marca.nombre
-    //producto.categoriaId = categoria.nombre
-    //console.log(producto);
+    
     try {
       let producto = await db.Producto.findByPk(req.params.id, {
         include: [{association:"categorias"}]
        });
-       //console.log ("PRODUCTO *******")
-       //console.log (producto.marcas.nombre)
+       
 
+       res.render("editar", { producto: producto });
     } catch (error) {
       console.log(error)
     }
 
-    //producto.marcaId = marca.nombre
-    //producto.categoriaId = categoria.nombre
-    //console.log(producto);
-    res.render("editar", { producto: producto });
-
-
-
   },
-
-
-
-  // lista: function(req,res){
-
-  /*LEO EL ARCHIVO Y RENDERIZO LA VISTA DE LISTA DE PRODUCTOS*/
-  // const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-  //   res.render("lista", {productos:productos}); 
-  //  },
-
 
   lista: async (req, res) => {
     try {
@@ -94,58 +64,14 @@ let controller = {
       console.log({ error });
     }
 
-    //// db.Producto.findAll()
-    //.then(productos =>{
-    //    res.render("lista", {productos:productos}); 
-    // })
+    
   },
 
 
   guardar: async function (req, res) {
     //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
-//    try {
 
-/*const marca = db.Marca.findOne({
-  where: {
-   nombre: req.body.marca,
-  }})
-
-
-  let marcaId;
-
-  if (marca && marca.id){
-  
-       marcaId= marca.id;
-    } else{
-      console.log("*******PASA XC ACA********")
-      const objetoMarca = {
-        nombre: req.body.marca,
-        descripcion: "nada loco",
-     
-      }
-
-      console.log ("******* El objeto a CREAR *****",JSON.stringify (objetoMarca))
-      
-      db.Marca.create(objetoMarca).then ((productonuevo)=>{
-        let marcaNueva =  db.Marca.findOne({
-          where: {
-           nombre: productonuevo.nombre,
-          }})
-      }).catch (error => {
-        console.log(error);
-      });
-      l
-
-        console.log ("****** Marca NUEVA *****", JSON.stringify (marcaNueva))
-
-        marcaId = marcaNueva.id;
-      }
-
-    console.log ("******* El ID de la MARCA *******", marcaId)*/
-  
-//console.log (JSON.stringify ("Categoria****", categoria));
-//console.log (JSON.stringify ("EL BODY /**/*", req.body));
 let errores = validationResult(req)
 
 try {
@@ -186,11 +112,6 @@ try {
                 
       }
 
-      /*SUMO EL ARCHIVO A PRODUCTOS Y ESCRIBO DE NUEVO EL JSON*/
-      //productos.push(productoNuevo);
-      // const data = JSON.stringify(productos, null, " ");
-      //fs.writeFileSync(productsFilePath, data);
-
     
     }catch (error){
       console.log(error);
@@ -200,18 +121,10 @@ try {
 
   actualizar: function (req, res) {
     /*LEO EL ARCHIVO DE PRODUCTOS*/
-    //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+    
 
     /*BUSCO EL ID QUE VINO POR PARAMETRO Y REEMPLAZO LOS DATOS QUE VIENEN POR BODY*/
-    // productos.forEach((p) => {
-    // if (p.id == req.params.id) {
-    //     p.name = req.body.name;
-    //     p.price = req.body.price;
-    //     p.discount = req.body.discount;
-    //     p.description = req.body.description;
-    //     p.category = req.body.category;
-    //    p.stock =req.body.stock;
-    //      p.marca =req.body.marca;
+   
 
     /*VEO SI HAY ARCHIVO Y CAMBIO NOMBRE DE IMAGEN GUARDADA*/
     try {
@@ -243,33 +156,10 @@ try {
       console.log(error);
     }
 
-
-    /*ACTUALIZO JSON*/
-    //const data = JSON.stringify(productos, null, " ");
-    //fs.writeFileSync(productsFilePath, data);
-
-    /*REDIRIJO A LOS NUEVOS DETALLES*/
-
-
   },
 
-  borrar: function (req, res) {
+  borrar:async function (req, res) {
 
-    /*LEO EL ARCHIVO DE PRODUCTOS*/
-    //let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    /*BUSCO ID QUE VINO POR PARAMETRO*/
-    //const producto = productos.find((p) => p.id == req.params.id);
-    /*FILTRO EL ID A ELIMINAR*/
-    //productos = productos.filter((p) => p.id != req.params.id);
-    /*BORRO LA FOTO DEL ID ELIMINADO SIEMPRE Y CUANDO NO SEA LA POR DEFECTO*/
-
-
-    ////if (producto && producto.image !="user-vacio.jpg") {
-    //      fs.unlinkSync("./public/bancoimagenes/" + producto.image);
-    // }
-    /*ACTUALIZO JSON Y REDIRECCIONO*/
-    //const data = JSON.stringify(productos, null, " ");
-    //fs.writeFileSync(productsFilePath, data);
     try {
       db.Producto.destroy({
         where: {
@@ -277,12 +167,7 @@ try {
         },
 
       });
-      //NO SE BORRA LA PUTA IMAGEN
-
-      //if (db.Producto && db.Producto.image !="user-vacio.jpg") {
-      //         fs.unlinkSync("./public/bancoimagenes/" + db.Producto.image);
-
-      // };
+   
       res.redirect("/");
 
     } catch (error) {
