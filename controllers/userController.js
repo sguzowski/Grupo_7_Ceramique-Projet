@@ -1,12 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-//JSON DE USUARIO LO LEO Y ALMACENO
-const usersFilePath = path.join(__dirname, "../data/users.json");
-
-//JSON DE PRODUCTOS LO LEO Y ALMACENO
-const productsFilePath = path.join(__dirname, "../data/products.json");
-
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 //LLAMO AL OBJETO DE ERRORES DE VALIDACIONES
@@ -58,24 +52,19 @@ let controller = {
 
         if (errores.isEmpty()) {
             try {
-                //const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-                //let userToLogin = usuarios.find( u => u.usuario === req.body.usuario);
-                //console.log(req.body.usuario);
+               //BUSCO USUARIO EN BASE DE DATOS
                 const userToLogin = await db.Usuario.findOne({
                     where: {
                         usuario: req.body.usuario,
                     }
                 })
-                //console.log(userToLogin.password);
-                //console.log("***********" + userToLogin + "**************");
+                
                 if (userToLogin) {
-                   // console.log(userToLogin.password);
-                   // console.log(req.body.password);
+                   
                     let password = bcrypt.compareSync(req.body.password, userToLogin.password);
-                 //   console.log(password);
+                 
                     if (password == true) {
                         usuarioLogueado = userToLogin;
-                        //console.log("ENCONTRE EL USUARIO");
                     }
 
                 }
@@ -112,24 +101,10 @@ let controller = {
         let errores = validationResult(req);
 
         try {
-       
-
-        //const usuarios = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        //console.log(errores);
-
-        /* CONSULTO SI EL USUARIO EXISTE  Y SI EXISTE NO LO GUARDO - SI HAY ERRORES NO GUARDO NADA*/
-        //let repetido = usuarios.find((u) => u.usuario == req.body.usuario);
-        //console.log("*** repetido ***", repetido)
-        //console.log("---- lenght ----", errores.errors.length)
-        //console.log(JSON.stringify(errores.errors))
-        //console.log (repetido == null && errores.isEmpty())
-       // console.log (repetido == null)
-      //  console.log (errores.isEmpty())
-        
       
       if (errores.isEmpty()) {
 
-            /*CREO EL PRODUCTO NUEVO PARA GUARDARLO*/
+            /*CREO EL USUARIO NUEVO PARA GUARDARLO*/
             const usuarioNuevo = {
                 nombre: req.body.nombre,
                 usuario: req.body.usuario,
@@ -143,18 +118,7 @@ let controller = {
             /*PREGUNTO SI ME VINO EL ARCHIVO DE IMAGEN*/
             if (req.file) {
                 usuarioNuevo.image = req.file.filename;
-            }
-
-            /*SUMO EL ARCHIVO A PRODUCTOS Y ESCRIBO DE NUEVO EL JSON*/
-            //usuarios.push(usuarioNuevo);
-
-            /*db.Usuario.create(usuarioNuevo)
-                .then(usuarioNuevo => {
-                    res.redirect("/login");
-                }).catch(error => {
-                    res.redirect("/")
-                })*/
-    console.log (JSON.stringify(usuarioNuevo))
+            }   
 
         const repetido = await db.Usuario.findOne({
             where: {
@@ -189,23 +153,6 @@ let controller = {
         console.log(error);
     }
     },
-
-    //const data = JSON.stringify(usuarios, null, " ");
-    //fs.writeFileSync(usersFilePath, data);
-    //res.redirect("/login");
-
-    // }else{
-    //    if(repetido!=undefined){
-    //     let msgRepetido = "Error: Nombre de usuario repetido!!!! Escriba otro usuario para registrarse"
-    //    res.render("register",{msgRepetido:msgRepetido});
-    //   }else{
-    //   errores = errores.mapped();
-    //   let old =req.body;
-    //   res.render("register",{errores:errores, old:old})
-    //    }
-    // }
-
-
 
     contactos: function (req, res) {
         res.render("contacto");

@@ -14,8 +14,8 @@ window.addEventListener("load", function(){
         let campoUsuario = document.querySelector("input.usuario");
         if (campoUsuario.value == ""){
             errores.push("El usuario no puede estar vacio");
-        }else if (campoUsuario.value.length < 10){
-            errores.push("El usuario debe tener mas de 10 caracteres");
+        }else if (campoUsuario.value.length < 8){
+            errores.push("El usuario debe tener mas de 8 caracteres");
         };
 
         let campoPass = document.querySelector("input.password");
@@ -50,9 +50,12 @@ window.addEventListener("load", function(){
         if (errores.length > 0){
             e.preventDefault();
             let ulError = document.querySelector("div.listaerrores ul");
+            ulError.innerHTML = '<div class="listaerrores"></div>'
             for (let i = 0; i<errores.length; i++){
                 ulError.innerHTML += "<li>"+ errores[i] +"</li>";
+                
             }
         };
+        errores = []; 
     });
 });
